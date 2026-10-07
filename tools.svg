@@ -1,0 +1,278 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 640" width="1280" height="640" role="img" aria-label="DATAMOSH.STACK — tools">
+  <defs>
+    <radialGradient id="dmBgGrad" cx="50%" cy="50%" r="80%">
+      <stop offset="0%" stop-color="#0a0a12"/>
+      <stop offset="100%" stop-color="#000000"/>
+    </radialGradient>
+
+    <linearGradient id="dmGoldGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffcc00"/>
+      <stop offset="50%" stop-color="#ffe680"/>
+      <stop offset="100%" stop-color="#ffcc00"/>
+    </linearGradient>
+
+    <filter id="dmSoftGlow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="10" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="dmNoise">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="4" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.07"/>
+      </feComponentTransfer>
+    </filter>
+
+    <filter id="dmPixelSort">
+      <feTurbulence type="turbulence" baseFrequency="0.01 0.9" numOctaves="2" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.05"/>
+      </feComponentTransfer>
+    </filter>
+
+    <style>
+      .mono { font-family: 'SF Mono', 'Fira Code', 'Consolas', 'Courier New', monospace; }
+
+      @keyframes dmBlink {
+        0%, 49% { opacity: 1; }
+        50%, 100% { opacity: 0; }
+      }
+
+      @keyframes dmLed {
+        0%, 49%, 100% { opacity: 1; }
+        50%, 99% { opacity: 0.15; }
+      }
+
+      @keyframes dmData {
+        0%, 90%, 100% { opacity: 0.7; }
+        92% { opacity: 0.2; }
+        94% { opacity: 1; }
+        96% { opacity: 0.4; }
+      }
+
+      @keyframes dmMosh1 {
+        0%, 82%, 100% { transform: translate(0, 0); opacity: 0; }
+        84% { transform: translate(-6px, 2px); opacity: 1; }
+        88% { transform: translate(4px, -2px); opacity: 1; }
+        92% { transform: translate(-2px, 1px); opacity: 0.6; }
+        96% { transform: translate(0, 0); opacity: 0; }
+      }
+
+      @keyframes dmMosh2 {
+        0%, 68%, 100% { transform: translate(0, 0); opacity: 0; }
+        70% { transform: translate(5px, -3px); opacity: 0.9; }
+        74% { transform: translate(-4px, 2px); opacity: 0.9; }
+        78% { transform: translate(2px, -1px); opacity: 0.5; }
+        82% { transform: translate(0, 0); opacity: 0; }
+      }
+
+      @keyframes dmSlice {
+        0%, 100% { transform: translateX(0); opacity: 0.5; }
+        46% { transform: translateX(0); opacity: 0.5; }
+        47% { transform: translateX(-8px); opacity: 1; }
+        48% { transform: translateX(6px); opacity: 0.8; }
+        49% { transform: translateX(0); opacity: 0.5; }
+        82% { transform: translateX(0); opacity: 0.5; }
+        83% { transform: translateX(10px); opacity: 1; }
+        84% { transform: translateX(-4px); opacity: 0.7; }
+        85% { transform: translateX(0); opacity: 0.5; }
+      }
+
+      @keyframes dmCorrupt {
+        0%, 88%, 100% { opacity: 0.4; }
+        90% { opacity: 1; }
+        92% { opacity: 0.2; }
+        94% { opacity: 0.9; }
+        96% { opacity: 0.4; }
+      }
+
+      @keyframes dmCardGlitch {
+        0%, 100% { transform: translate(0, 0); }
+        88% { transform: translate(0, 0); }
+        89% { transform: translate(-2px, 1px); }
+        90% { transform: translate(2px, -1px); }
+        91% { transform: translate(-1px, 0); }
+        92% { transform: translate(1px, 1px); }
+        93% { transform: translate(0, 0); }
+      }
+
+      .dm-blink { animation: dmBlink 1s step-end infinite; }
+      .dm-led { animation: dmLed 1.2s step-end infinite; }
+      .dm-data { animation: dmData 2.5s ease-in-out infinite; }
+      .dm-mosh1 { animation: dmMosh1 4s ease-in-out infinite; }
+      .dm-mosh2 { animation: dmMosh2 5s ease-in-out infinite; }
+      .dm-slice { animation: dmSlice 4.5s ease-in-out infinite; }
+      .dm-corrupt { animation: dmCorrupt 3s ease-in-out infinite; }
+
+      .dm-card-1 { animation: dmCardGlitch 5s ease-in-out infinite; }
+      .dm-card-2 { animation: dmCardGlitch 5.5s ease-in-out infinite 0.6s; }
+      .dm-card-3 { animation: dmCardGlitch 6s ease-in-out infinite 1.2s; }
+      .dm-card-4 { animation: dmCardGlitch 5.2s ease-in-out infinite 1.8s; }
+      .dm-card-5 { animation: dmCardGlitch 5.8s ease-in-out infinite 2.4s; }
+      .dm-card-6 { animation: dmCardGlitch 5.4s ease-in-out infinite 3s; }
+      .dm-card-7 { animation: dmCardGlitch 5.6s ease-in-out infinite 3.6s; }
+      .dm-card-8 { animation: dmCardGlitch 5.1s ease-in-out infinite 4.2s; }
+    </style>
+  </defs>
+
+  <rect width="1280" height="640" fill="url(#dmBgGrad)"/>
+  <rect width="1280" height="640" filter="url(#dmPixelSort)" opacity="0.6"/>
+  <rect width="1280" height="640" filter="url(#dmNoise)" opacity="0.4"/>
+
+  <ellipse cx="350" cy="280" rx="340" ry="200" fill="#00fff0" opacity="0.06" filter="url(#dmSoftGlow)"/>
+  <ellipse cx="950" cy="360" rx="320" ry="200" fill="#ff00aa" opacity="0.05" filter="url(#dmSoftGlow)"/>
+
+  <rect class="dm-led" x="48" y="46" width="6" height="6" fill="#00fff0"/>
+  <text class="mono" x="66" y="54" font-size="11" fill="#00fff0" font-weight="600" letter-spacing="3">/// DATAMOSH.STACK</text>
+  <text class="mono dm-data" x="1232" y="54" text-anchor="end" font-size="10" fill="#4a4a5a" letter-spacing="2">BUFFER: 0x08 · LOCKED</text>
+
+  <line x1="48" y1="70" x2="1232" y2="70" stroke="#1a1a2a" stroke-width="1"/>
+  <line x1="48" y1="71" x2="348" y2="71" stroke="url(#dmGoldGrad)" stroke-width="1" opacity="0.6"/>
+
+  <text class="mono dm-slice" x="48" y="130" font-size="40" fill="#ffffff" font-weight="700" letter-spacing="-0.5">TOOLKIT.STREAM</text>
+  <text class="mono dm-mosh1" x="48" y="130" font-size="40" fill="#00fff0" font-weight="700" letter-spacing="-0.5" opacity="0">TOOLKIT.STREAM</text>
+  <text class="mono dm-mosh2" x="48" y="130" font-size="40" fill="#ff00aa" font-weight="700" letter-spacing="-0.5" opacity="0">TOOLKIT.STREAM</text>
+
+  <text class="mono" x="48" y="158" font-size="11" fill="#4a4a5a" letter-spacing="3">PACKETS.IN — 08 MODULES · ACTIVE.SESSION</text>
+  <text class="mono dm-blink" x="1232" y="158" text-anchor="end" font-size="11" fill="#00fff0" letter-spacing="2">▸ STREAMING</text>
+
+  <g class="dm-card-1">
+    <rect x="48" y="196" width="284" height="92" fill="#0a0a12" stroke="#1a1a2a" stroke-width="1"/>
+    <rect x="48" y="196" width="284" height="92" fill="#00fff0" opacity="0.03"/>
+    <rect class="dm-mosh1" x="48" y="196" width="284" height="6" fill="#00fff0" opacity="0"/>
+    <text class="mono" x="64" y="222" font-size="10" fill="#4a4a5a" letter-spacing="2">MODULE.01</text>
+    <text class="mono dm-corrupt" x="316" y="222" text-anchor="end" font-size="10" fill="#00fff0" letter-spacing="1.5">●</text>
+    <text class="mono" x="64" y="252" font-size="18" fill="#ffffff" font-weight="700" letter-spacing="0.5">HTML / CSS</text>
+    <text class="mono" x="64" y="274" font-size="10.5" fill="#4a4a5a" letter-spacing="1">web.foundation · LAYOUT</text>
+  </g>
+
+  <g class="dm-card-2">
+    <rect x="348" y="196" width="284" height="92" fill="#0a0a12" stroke="#1a1a2a" stroke-width="1"/>
+    <rect x="348" y="196" width="284" height="92" fill="#ff00aa" opacity="0.03"/>
+    <rect class="dm-mosh2" x="348" y="196" width="284" height="6" fill="#ff00aa" opacity="0"/>
+    <text class="mono" x="364" y="222" font-size="10" fill="#4a4a5a" letter-spacing="2">MODULE.02</text>
+    <text class="mono dm-corrupt" x="616" y="222" text-anchor="end" font-size="10" fill="#ff00aa" letter-spacing="1.5">●</text>
+    <text class="mono" x="364" y="252" font-size="18" fill="#ffffff" font-weight="700" letter-spacing="0.5">JAVASCRIPT</text>
+    <text class="mono" x="364" y="274" font-size="10.5" fill="#4a4a5a" letter-spacing="1">interactive.logic · MOTION</text>
+  </g>
+
+  <g class="dm-card-3">
+    <rect x="648" y="196" width="284" height="92" fill="#0a0a12" stroke="#1a1a2a" stroke-width="1"/>
+    <rect x="648" y="196" width="284" height="92" fill="#ffcc00" opacity="0.03"/>
+    <rect class="dm-mosh1" x="648" y="196" width="284" height="6" fill="#ffcc00" opacity="0" style="animation-delay: 1.2s"/>
+    <text class="mono" x="664" y="222" font-size="10" fill="#4a4a5a" letter-spacing="2">MODULE.03</text>
+    <text class="mono dm-corrupt" x="916" y="222" text-anchor="end" font-size="10" fill="#ffcc00" letter-spacing="1.5">●</text>
+    <text class="mono" x="664" y="252" font-size="18" fill="#ffffff" font-weight="700" letter-spacing="0.5">GITHUB</text>
+    <text class="mono" x="664" y="274" font-size="10.5" fill="#4a4a5a" letter-spacing="1">version.control · DEPLOY</text>
+  </g>
+
+  <g class="dm-card-4">
+    <rect x="948" y="196" width="284" height="92" fill="#0a0a12" stroke="#1a1a2a" stroke-width="1"/>
+    <rect x="948" y="196" width="284" height="92" fill="#00fff0" opacity="0.03"/>
+    <rect class="dm-mosh2" x="948" y="196" width="284" height="6" fill="#00fff0" opacity="0" style="animation-delay: 1.6s"/>
+    <text class="mono" x="964" y="222" font-size="10" fill="#4a4a5a" letter-spacing="2">MODULE.04</text>
+    <text class="mono dm-corrupt" x="1216" y="222" text-anchor="end" font-size="10" fill="#00fff0" letter-spacing="1.5">●</text>
+    <text class="mono" x="964" y="252" font-size="18" fill="#ffffff" font-weight="700" letter-spacing="0.5">AI PROMPTING</text>
+    <text class="mono" x="964" y="274" font-size="10.5" fill="#4a4a5a" letter-spacing="1">gpt · copilot · DESIGN</text>
+  </g>
+
+  <g class="dm-card-5">
+    <rect x="48" y="308" width="284" height="92" fill="#0a0a12" stroke="#1a1a2a" stroke-width="1"/>
+    <rect x="48" y="308" width="284" height="92" fill="#ff00aa" opacity="0.03"/>
+    <rect class="dm-mosh1" x="48" y="308" width="284" height="6" fill="#ff00aa" opacity="0" style="animation-delay: 2s"/>
+    <text class="mono" x="64" y="334" font-size="10" fill="#4a4a5a" letter-spacing="2">MODULE.05</text>
+    <text class="mono dm-corrupt" x="316" y="334" text-anchor="end" font-size="10" fill="#ff00aa" letter-spacing="1.5">●</text>
+    <text class="mono" x="64" y="364" font-size="18" fill="#ffffff" font-weight="700" letter-spacing="0.5">TRANSLATION</text>
+    <text class="mono" x="64" y="386" font-size="10.5" fill="#4a4a5a" letter-spacing="1">EN ↔ ID · ACADEMIC</text>
+  </g>
+
+  <g class="dm-card-6">
+    <rect x="348" y="308" width="284" height="92" fill="#0a0a12" stroke="#1a1a2a" stroke-width="1"/>
+    <rect x="348" y="308" width="284" height="92" fill="#ffcc00" opacity="0.03"/>
+    <rect class="dm-mosh2" x="348" y="308" width="284" height="6" fill="#ffcc00" opacity="0" style="animation-delay: 2.4s"/>
+    <text class="mono" x="364" y="334" font-size="10" fill="#4a4a5a" letter-spacing="2">MODULE.06</text>
+    <text class="mono dm-corrupt" x="616" y="334" text-anchor="end" font-size="10" fill="#ffcc00" letter-spacing="1.5">●</text>
+    <text class="mono" x="364" y="364" font-size="18" fill="#ffffff" font-weight="700" letter-spacing="0.5">COPYWRITING</text>
+    <text class="mono" x="364" y="386" font-size="10.5" fill="#4a4a5a" letter-spacing="1">content · EDITORIAL</text>
+  </g>
+
+  <g class="dm-card-7">
+    <rect x="648" y="308" width="284" height="92" fill="#0a0a12" stroke="#1a1a2a" stroke-width="1"/>
+    <rect x="648" y="308" width="284" height="92" fill="#00fff0" opacity="0.03"/>
+    <rect class="dm-mosh1" x="648" y="308" width="284" height="6" fill="#00fff0" opacity="0" style="animation-delay: 2.8s"/>
+    <text class="mono" x="664" y="334" font-size="10" fill="#4a4a5a" letter-spacing="2">MODULE.07</text>
+    <text class="mono dm-corrupt" x="916" y="334" text-anchor="end" font-size="10" fill="#00fff0" letter-spacing="1.5">●</text>
+    <text class="mono" x="664" y="364" font-size="18" fill="#ffffff" font-weight="700" letter-spacing="0.5">MARKDOWN</text>
+    <text class="mono" x="664" y="386" font-size="10.5" fill="#4a4a5a" letter-spacing="1">writing · DOCS</text>
+  </g>
+
+  <g class="dm-card-8">
+    <rect x="948" y="308" width="284" height="92" fill="#0a0a12" stroke="#1a1a2a" stroke-width="1"/>
+    <rect x="948" y="308" width="284" height="92" fill="#ff00aa" opacity="0.03"/>
+    <rect class="dm-mosh2" x="948" y="308" width="284" height="6" fill="#ff00aa" opacity="0" style="animation-delay: 3.2s"/>
+    <text class="mono" x="964" y="334" font-size="10" fill="#4a4a5a" letter-spacing="2">MODULE.08</text>
+    <text class="mono dm-corrupt" x="1216" y="334" text-anchor="end" font-size="10" fill="#ff00aa" letter-spacing="1.5">●</text>
+    <text class="mono" x="964" y="364" font-size="18" fill="#ffffff" font-weight="700" letter-spacing="0.5">CANVA</text>
+    <text class="mono" x="964" y="386" font-size="10.5" fill="#4a4a5a" letter-spacing="1">visual · DESIGN</text>
+  </g>
+
+  <line x1="48" y1="440" x2="1232" y2="440" stroke="#1a1a2a" stroke-width="1"/>
+  <text class="mono" x="48" y="466" font-size="10" fill="#4a4a5a" letter-spacing="2">PACKET.LOSS</text>
+
+  <g opacity="0.8">
+    <rect x="200" y="456" width="40" height="12" fill="#00fff0" opacity="0.7"/>
+    <rect x="244" y="456" width="12" height="12" fill="#00fff0" opacity="0.4"/>
+    <rect x="260" y="456" width="24" height="12" fill="#ff00aa" opacity="0.6"/>
+    <rect x="288" y="456" width="8" height="12" fill="#00fff0" opacity="0.3"/>
+    <rect x="300" y="456" width="56" height="12" fill="#ffcc00" opacity="0.5"/>
+    <rect x="360" y="456" width="16" height="12" fill="#00fff0" opacity="0.7"/>
+    <rect x="380" y="456" width="32" height="12" fill="#ff00aa" opacity="0.5"/>
+    <rect x="416" y="456" width="48" height="12" fill="#00fff0" opacity="0.6"/>
+    <rect x="468" y="456" width="8" height="12" fill="#ffcc00" opacity="0.3"/>
+    <rect x="480" y="456" width="72" height="12" fill="#ff00aa" opacity="0.5"/>
+    <rect x="556" y="456" width="20" height="12" fill="#00fff0" opacity="0.7"/>
+    <rect x="580" y="456" width="44" height="12" fill="#ffcc00" opacity="0.4"/>
+    <rect x="628" y="456" width="16" height="12" fill="#00fff0" opacity="0.6"/>
+    <rect x="648" y="456" width="84" height="12" fill="#ff00aa" opacity="0.4"/>
+    <rect x="736" y="456" width="24" height="12" fill="#00fff0" opacity="0.7"/>
+    <rect x="764" y="456" width="40" height="12" fill="#ffcc00" opacity="0.5"/>
+    <rect x="808" y="456" width="12" height="12" fill="#ff00aa" opacity="0.6"/>
+    <rect x="824" y="456" width="60" height="12" fill="#00fff0" opacity="0.4"/>
+    <rect x="888" y="456" width="32" height="12" fill="#ff00aa" opacity="0.5"/>
+    <rect x="924" y="456" width="48" height="12" fill="#ffcc00" opacity="0.6"/>
+    <rect x="976" y="456" width="16" height="12" fill="#00fff0" opacity="0.7"/>
+    <rect x="996" y="456" width="84" height="12" fill="#ff00aa" opacity="0.4"/>
+    <rect x="1084" y="456" width="36" height="12" fill="#00fff0" opacity="0.6"/>
+    <rect x="1124" y="456" width="24" height="12" fill="#ffcc00" opacity="0.5"/>
+    <rect x="1152" y="456" width="80" height="12" fill="#ff00aa" opacity="0.3"/>
+  </g>
+
+  <text class="mono dm-data" x="1232" y="466" text-anchor="end" font-size="10" fill="#4a4a5a" letter-spacing="2">0.24% LOSS</text>
+
+  <line x1="48" y1="500" x2="1232" y2="500" stroke="#1a1a2a" stroke-width="1"/>
+  <text class="mono" x="48" y="530" font-size="11" fill="#4a4a5a" letter-spacing="2">▸ DATA.INTEGRITY</text>
+
+  <rect x="220" y="522" width="60" height="8" fill="#0a0a12" stroke="#1a1a2a" stroke-width="0.5"/>
+  <rect x="220" y="522" width="52" height="8" fill="#00fff0" opacity="0.6"/>
+
+  <rect x="292" y="522" width="60" height="8" fill="#0a0a12" stroke="#1a1a2a" stroke-width="0.5"/>
+  <rect x="292" y="522" width="44" height="8" fill="#ff00aa" opacity="0.6"/>
+
+  <rect x="364" y="522" width="60" height="8" fill="#0a0a12" stroke="#1a1a2a" stroke-width="0.5"/>
+  <rect x="364" y="522" width="56" height="8" fill="#ffcc00" opacity="0.6"/>
+
+  <text class="mono dm-blink" x="1232" y="530" text-anchor="end" font-size="11" fill="#00fff0" letter-spacing="2">▸ READY</text>
+
+  <text class="mono dm-data" x="48" y="580" font-size="10" fill="#4a4a5a" letter-spacing="3">0x01 · 0x02 · 0x03 · 0x04 · 0x05 · 0x06 · 0x07 · 0x08</text>
+  <text class="mono" x="1232" y="580" text-anchor="end" font-size="10" fill="#4a4a5a" letter-spacing="2">STACK.LOADED</text>
+
+  <line x1="48" y1="600" x2="88" y2="600" stroke="#ffcc00" stroke-width="1.5" opacity="0.7"/>
+  <line x1="98" y1="600" x2="118" y2="600" stroke="#ffcc00" stroke-width="1.5" opacity="0.4"/>
+  <line x1="128" y1="600" x2="138" y2="600" stroke="#ffcc00" stroke-width="1.5" opacity="0.2"/>
+
+</svg>

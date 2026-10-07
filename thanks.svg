@@ -1,0 +1,147 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 160" width="1280" height="160" role="img" aria-label="Thanks for visiting">
+  <defs>
+    <radialGradient id="tvBgGrad" cx="50%" cy="50%" r="80%">
+      <stop offset="0%" stop-color="#0a0a12"/>
+      <stop offset="100%" stop-color="#000000"/>
+    </radialGradient>
+
+    <linearGradient id="tvGoldGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffcc00"/>
+      <stop offset="50%" stop-color="#ffe680"/>
+      <stop offset="100%" stop-color="#ffcc00"/>
+    </linearGradient>
+
+    <filter id="tvSoftGlow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="tvNoise">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="4" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.06"/>
+      </feComponentTransfer>
+    </filter>
+
+    <style>
+      .mono { font-family: 'SF Mono', 'Fira Code', 'Consolas', 'Courier New', monospace; }
+
+      /* === MAIN TEXT === */
+      @keyframes tvMain {
+        /* Muncul langsung */
+        0%, 38% { opacity: 1; transform: translate(0, 0); }
+        /* Glitch 38-58% */
+        39% { opacity: 1; transform: translate(0, 0); }
+        40% { opacity: 0.7; transform: translate(-3px, 1px); }
+        41% { opacity: 1; transform: translate(2px, -1px); }
+        42% { opacity: 0.5; transform: translate(-4px, 0); }
+        43% { opacity: 1; transform: translate(3px, 1px); }
+        44% { opacity: 0.8; transform: translate(-2px, -1px); }
+        45% { opacity: 1; transform: translate(0, 0); }
+        46% { opacity: 0.6; transform: translate(-5px, 0); }
+        47% { opacity: 1; transform: translate(4px, 1px); }
+        48% { opacity: 0.7; transform: translate(-3px, -1px); }
+        49% { opacity: 1; transform: translate(0, 0); }
+        /* Diam */
+        50%, 90% { opacity: 1; transform: translate(0, 0); }
+        /* Fade out */
+        91%, 100% { opacity: 0; transform: translate(0, 0); }
+      }
+
+      /* === GLITCH CYAN === */
+      @keyframes tvGlitchCyan {
+        0%, 38% { opacity: 0; transform: translateX(0); }
+        39% { opacity: 0; transform: translateX(0); }
+        40% { opacity: 1; transform: translateX(-4px); }
+        41% { opacity: 0; transform: translateX(0); }
+        42% { opacity: 1; transform: translateX(5px); }
+        43% { opacity: 0; transform: translateX(0); }
+        44% { opacity: 1; transform: translateX(-3px); }
+        45% { opacity: 0; transform: translateX(0); }
+        46% { opacity: 1; transform: translateX(6px); }
+        47% { opacity: 0; transform: translateX(0); }
+        48% { opacity: 1; transform: translateX(-4px); }
+        49% { opacity: 0; transform: translateX(0); }
+        50%, 100% { opacity: 0; transform: translateX(0); }
+      }
+
+      /* === GLITCH MAGENTA === */
+      @keyframes tvGlitchMagenta {
+        0%, 38% { opacity: 0; transform: translateX(0); }
+        39% { opacity: 0; transform: translateX(0); }
+        40% { opacity: 1; transform: translateX(4px); }
+        41% { opacity: 0; transform: translateX(0); }
+        42% { opacity: 1; transform: translateX(-5px); }
+        43% { opacity: 0; transform: translateX(0); }
+        44% { opacity: 1; transform: translateX(3px); }
+        45% { opacity: 0; transform: translateX(0); }
+        46% { opacity: 1; transform: translateX(-6px); }
+        47% { opacity: 0; transform: translateX(0); }
+        48% { opacity: 1; transform: translateX(4px); }
+        49% { opacity: 0; transform: translateX(0); }
+        50%, 100% { opacity: 0; transform: translateX(0); }
+      }
+
+      /* === ORNAMEN === */
+      @keyframes tvOrn {
+        0%, 100% { opacity: 0.4; transform: translateY(0); }
+        50% { opacity: 1; transform: translateY(-3px); }
+      }
+
+      /* === LINE — draw setelah teks muncul === */
+      @keyframes tvLine {
+        0%, 18% { transform: scaleX(0); opacity: 0; }
+        30%, 88% { transform: scaleX(1); opacity: 0.6; }
+        90%, 100% { transform: scaleX(0); opacity: 0; }
+      }
+
+      /* === SUBTITLE === */
+      @keyframes tvSub {
+        0%, 30% { opacity: 0; }
+        45%, 88% { opacity: 0.7; }
+        90%, 100% { opacity: 0; }
+      }
+
+      .tv-main { animation: tvMain 7s ease-in-out infinite; }
+      .tv-cyan { animation: tvGlitchCyan 7s ease-in-out infinite; }
+      .tv-mag { animation: tvGlitchMagenta 7s ease-in-out infinite; }
+      .tv-orn { animation: tvOrn 3s ease-in-out infinite; }
+      .tv-sub { animation: tvSub 7s ease-in-out infinite; }
+      .tv-line { animation: tvLine 7s ease-out infinite; transform-origin: center; }
+    </style>
+  </defs>
+
+  <rect width="1280" height="160" fill="url(#tvBgGrad)"/>
+  <rect width="1280" height="160" filter="url(#tvNoise)" opacity="0.5"/>
+
+  <ellipse cx="640" cy="80" rx="500" ry="100" fill="#00fff0" opacity="0.04" filter="url(#tvSoftGlow)"/>
+  <ellipse cx="640" cy="80" rx="380" ry="80" fill="#ff00aa" opacity="0.03" filter="url(#tvSoftGlow)"/>
+  <ellipse cx="640" cy="80" rx="260" ry="60" fill="#ffcc00" opacity="0.03" filter="url(#tvSoftGlow)"/>
+
+  <line x1="48" y1="28" x2="1232" y2="28" stroke="#1a1a2a" stroke-width="1"/>
+
+  <g class="tv-orn">
+    <text class="mono" x="48" y="76" font-size="14" fill="#00fff0" opacity="0.5">◆</text>
+  </g>
+
+  <g class="tv-orn" style="animation-delay: 1.5s">
+    <text class="mono" x="1220" y="76" font-size="14" fill="#ff00aa" opacity="0.5">◆</text>
+  </g>
+
+  <text class="mono tv-cyan" x="640" y="88" text-anchor="middle" font-size="28" fill="#00fff0" font-weight="700" letter-spacing="8">THANKS FOR VISITING</text>
+
+  <text class="mono tv-mag" x="640" y="88" text-anchor="middle" font-size="28" fill="#ff00aa" font-weight="700" letter-spacing="8">THANKS FOR VISITING</text>
+
+  <text class="mono tv-main" x="640" y="88" text-anchor="middle" font-size="28" fill="#ffcc00" font-weight="700" letter-spacing="8">THANKS FOR VISITING</text>
+
+  <rect class="tv-line" x="440" y="106" width="400" height="1" fill="url(#tvGoldGrad)"/>
+
+  <text class="mono tv-sub" x="640" y="128" text-anchor="middle" font-size="10" fill="#4a4a5a" letter-spacing="4">END.OF.TRANSMISSION — AZHIBNMJKFR · 2026</text>
+
+  <line x1="48" y1="144" x2="1232" y2="144" stroke="#1a1a2a" stroke-width="1"/>
+
+</svg>

@@ -1,0 +1,332 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 480" width="1280" height="480" role="img" aria-label="SIGNAL.OUT — connect">
+  <defs>
+    <radialGradient id="sgBgGrad" cx="50%" cy="50%" r="80%">
+      <stop offset="0%" stop-color="#0a0a12"/>
+      <stop offset="100%" stop-color="#000000"/>
+    </radialGradient>
+
+    <linearGradient id="sgGoldGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffcc00"/>
+      <stop offset="50%" stop-color="#ffe680"/>
+      <stop offset="100%" stop-color="#ffcc00"/>
+    </linearGradient>
+
+    <linearGradient id="sgWaveGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00fff0" stop-opacity="0"/>
+      <stop offset="25%" stop-color="#00fff0" stop-opacity="0.5"/>
+      <stop offset="50%" stop-color="#ff00aa" stop-opacity="0.5"/>
+      <stop offset="75%" stop-color="#ffcc00" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#00fff0" stop-opacity="0"/>
+    </linearGradient>
+
+    <linearGradient id="sgHoloGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#00fff0" stop-opacity="0.6"/>
+      <stop offset="50%" stop-color="#ff00aa" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#ffcc00" stop-opacity="0.1"/>
+    </linearGradient>
+
+    <!-- Gradient border kiri-kanan -->
+    <linearGradient id="sgBorderCyan" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00fff0" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#00fff0" stop-opacity="0"/>
+    </linearGradient>
+
+    <linearGradient id="sgBorderMagenta" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ff00aa" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#ff00aa" stop-opacity="0"/>
+    </linearGradient>
+
+    <linearGradient id="sgBorderGold" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffcc00" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#ffcc00" stop-opacity="0"/>
+    </linearGradient>
+
+    <filter id="sgSoftGlow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="12" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="sgNoise">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="4" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.06"/>
+      </feComponentTransfer>
+    </filter>
+
+    <style>
+      .mono { font-family: 'SF Mono', 'Fira Code', 'Consolas', 'Courier New', monospace; }
+
+      @keyframes sgWave {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-320px); }
+      }
+
+      @keyframes sgWaveSlow {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-640px); }
+      }
+
+      @keyframes sgHolo {
+        0%, 100% { opacity: 1; }
+        45% { opacity: 1; }
+        46% { opacity: 0.7; }
+        47% { opacity: 1; }
+        78% { opacity: 1; }
+        79% { opacity: 0.85; }
+        80% { opacity: 1; }
+      }
+
+      @keyframes sgBar1 {
+        0%, 100% { transform: scaleY(1); }
+        50% { transform: scaleY(0.4); }
+      }
+
+      @keyframes sgBar2 {
+        0%, 100% { transform: scaleY(0.6); }
+        50% { transform: scaleY(1); }
+      }
+
+      @keyframes sgBar3 {
+        0%, 100% { transform: scaleY(0.8); }
+        50% { transform: scaleY(0.3); }
+      }
+
+      @keyframes sgHoloScan {
+        0% { transform: translateY(0); opacity: 0; }
+        10% { opacity: 0.6; }
+        90% { opacity: 0.6; }
+        100% { transform: translateY(116px); opacity: 0; }
+      }
+
+      @keyframes sgLed {
+        0%, 49%, 100% { opacity: 1; }
+        50%, 99% { opacity: 0.15; }
+      }
+
+      @keyframes sgBlink {
+        0%, 49% { opacity: 1; }
+        50%, 100% { opacity: 0; }
+      }
+
+      @keyframes sgData {
+        0%, 90%, 100% { opacity: 0.7; }
+        92% { opacity: 0.2; }
+        94% { opacity: 1; }
+        96% { opacity: 0.4; }
+      }
+
+      @keyframes sgChannelGlitch {
+        0%, 100% { transform: translate(0, 0); filter: none; }
+        88% { transform: translate(0, 0); filter: none; }
+        89% { transform: translate(-2px, 1px); filter: hue-rotate(-15deg); }
+        90% { transform: translate(2px, -1px); filter: hue-rotate(15deg); }
+        91% { transform: translate(-1px, 0); filter: none; }
+        92% { transform: translate(1px, 1px); filter: hue-rotate(-10deg); }
+        93% { transform: translate(0, 0); filter: none; }
+        94% { opacity: 0.85; }
+        95% { opacity: 1; }
+      }
+
+      @keyframes sgTextGlitchCyan {
+        0%, 100% { transform: translateX(0); opacity: 0; }
+        88% { transform: translateX(0); opacity: 0; }
+        89% { transform: translateX(-2px); opacity: 0.8; }
+        91% { transform: translateX(2px); opacity: 0.8; }
+        93% { transform: translateX(0); opacity: 0; }
+      }
+
+      @keyframes sgTextGlitchMagenta {
+        0%, 100% { transform: translateX(0); opacity: 0; }
+        88% { transform: translateX(0); opacity: 0; }
+        89% { transform: translateX(2px); opacity: 0.8; }
+        91% { transform: translateX(-2px); opacity: 0.8; }
+        93% { transform: translateX(0); opacity: 0; }
+      }
+
+      @keyframes sgSlice {
+        0%, 100% { transform: translateX(0); opacity: 0; }
+        87% { transform: translateX(0); opacity: 0; }
+        88% { transform: translateX(-8px); opacity: 1; }
+        89% { transform: translateX(6px); opacity: 1; }
+        90% { transform: translateX(-3px); opacity: 0.6; }
+        91% { transform: translateX(0); opacity: 0; }
+      }
+
+      /* Garis tepi card kiri — muncul saat hover */
+      @keyframes sgEdgeGlow {
+        0%, 100% { opacity: 0.3; }
+        50% { opacity: 0.7; }
+      }
+
+      .sg-wave { animation: sgWave 4s linear infinite; }
+      .sg-wave-slow { animation: sgWaveSlow 8s linear infinite; }
+      .sg-holo { animation: sgHolo 3s ease-in-out infinite; }
+      .sg-holo-scan { animation: sgHoloScan 3s linear infinite; }
+      .sg-led { animation: sgLed 1.2s step-end infinite; }
+      .sg-blink { animation: sgBlink 1s step-end infinite; }
+      .sg-data { animation: sgData 2.5s ease-in-out infinite; }
+      .sg-edge { animation: sgEdgeGlow 4s ease-in-out infinite; }
+
+      .sg-bar1 { animation: sgBar1 1.2s ease-in-out infinite; transform-origin: center bottom; transform-box: fill-box; }
+      .sg-bar2 { animation: sgBar2 1.5s ease-in-out infinite; transform-origin: center bottom; transform-box: fill-box; }
+      .sg-bar3 { animation: sgBar3 1.8s ease-in-out infinite; transform-origin: center bottom; transform-box: fill-box; }
+
+      .sg-ch-1 { animation: sgChannelGlitch 5s ease-in-out infinite; }
+      .sg-ch-2 { animation: sgChannelGlitch 5.5s ease-in-out infinite 0.8s; }
+      .sg-ch-3 { animation: sgChannelGlitch 6s ease-in-out infinite 1.6s; }
+      .sg-ch-4 { animation: sgChannelGlitch 5.2s ease-in-out infinite 2.4s; }
+
+      .sg-t-cyan-1 { animation: sgTextGlitchCyan 5s ease-in-out infinite; }
+      .sg-t-mag-1 { animation: sgTextGlitchMagenta 5s ease-in-out infinite; }
+      .sg-t-cyan-2 { animation: sgTextGlitchCyan 5.5s ease-in-out infinite 0.8s; }
+      .sg-t-mag-2 { animation: sgTextGlitchMagenta 5.5s ease-in-out infinite 0.8s; }
+      .sg-t-cyan-3 { animation: sgTextGlitchCyan 6s ease-in-out infinite 1.6s; }
+      .sg-t-mag-3 { animation: sgTextGlitchMagenta 6s ease-in-out infinite 1.6s; }
+      .sg-t-cyan-4 { animation: sgTextGlitchCyan 5.2s ease-in-out infinite 2.4s; }
+      .sg-t-mag-4 { animation: sgTextGlitchMagenta 5.2s ease-in-out infinite 2.4s; }
+
+      .sg-slice-1 { animation: sgSlice 5s ease-in-out infinite; }
+      .sg-slice-2 { animation: sgSlice 5.5s ease-in-out infinite 0.8s; }
+      .sg-slice-3 { animation: sgSlice 6s ease-in-out infinite 1.6s; }
+      .sg-slice-4 { animation: sgSlice 5.2s ease-in-out infinite 2.4s; }
+    </style>
+  </defs>
+
+  <rect width="1280" height="480" fill="url(#sgBgGrad)"/>
+  <rect width="1280" height="480" filter="url(#sgNoise)" opacity="0.5"/>
+
+  <ellipse cx="300" cy="240" rx="320" ry="180" fill="#00fff0" opacity="0.06" filter="url(#sgSoftGlow)"/>
+  <ellipse cx="980" cy="300" rx="300" ry="180" fill="#ff00aa" opacity="0.05" filter="url(#sgSoftGlow)"/>
+
+  <g opacity="0.15">
+    <path class="sg-wave-slow" d="M -320 440 Q -240 420 -160 440 T 0 440 T 160 440 T 320 440 T 480 440 T 640 440 T 800 440 T 960 440 T 1120 440 T 1280 440 T 1440 440 T 1600 440" stroke="url(#sgWaveGrad)" stroke-width="1.5" fill="none"/>
+    <path class="sg-wave" d="M -320 460 Q -240 445 -160 460 T 0 460 T 160 460 T 320 460 T 480 460 T 640 460 T 800 460 T 960 460 T 1120 460 T 1280 460 T 1440 460 T 1600 460" stroke="url(#sgWaveGrad)" stroke-width="1" fill="none" opacity="0.7"/>
+    <path class="sg-wave-slow" d="M -320 478 Q -240 468 -160 478 T 0 478 T 160 478 T 320 478 T 480 478 T 640 478 T 800 478 T 960 478 T 1120 478 T 1280 478 T 1440 478 T 1600 478" stroke="url(#sgWaveGrad)" stroke-width="1" fill="none" opacity="0.5" style="animation-delay: 2s"/>
+  </g>
+
+  <rect class="sg-led" x="48" y="46" width="6" height="6" fill="#00fff0"/>
+  <text class="mono" x="66" y="54" font-size="11" fill="#00fff0" font-weight="600" letter-spacing="3">/// SIGNAL.OUT</text>
+  <text class="mono sg-data" x="1232" y="54" text-anchor="end" font-size="10" fill="#4a4a5a" letter-spacing="2">CHANNELS: 04 · TRANSMITTING</text>
+
+  <line x1="48" y1="70" x2="1232" y2="70" stroke="#1a1a2a" stroke-width="1"/>
+  <line x1="48" y1="71" x2="348" y2="71" stroke="url(#sgGoldGrad)" stroke-width="1" opacity="0.6"/>
+
+  <text class="mono sg-holo" x="48" y="126" font-size="38" fill="#ffffff" font-weight="700" letter-spacing="-0.5">CONNECT.ME</text>
+  <text class="mono" x="366" y="126" font-size="38" fill="#00fff0" font-weight="700" letter-spacing="-0.5" opacity="0.4">◉</text>
+
+  <text class="mono" x="48" y="154" font-size="11" fill="#4a4a5a" letter-spacing="3">OUTBOUND.SIGNAL — OPEN.CHANNEL</text>
+  <text class="mono sg-blink" x="1232" y="154" text-anchor="end" font-size="11" fill="#ff00aa" letter-spacing="2">▸ TRANSMITTING</text>
+
+  <line x1="48" y1="174" x2="1232" y2="174" stroke="#1a1a2a" stroke-width="1"/>
+
+  <!-- CHANNEL 01 — GITHUB -->
+  <a href="https://github.com/azhibnmjkfr" target="_blank">
+    <g class="sg-ch-1">
+      <rect x="48" y="200" width="284" height="120" fill="#0a0a12" stroke="#1a1a2a" stroke-width="1"/>
+      <rect class="sg-edge" x="48" y="200" width="4" height="120" fill="url(#sgBorderCyan)"/>
+      <rect class="sg-holo-scan" x="48" y="200" width="284" height="2" fill="#00fff0" opacity="0.4"/>
+      <text class="mono" x="64" y="228" font-size="10" fill="#4a4a5a" letter-spacing="2">CH.01 — SOURCE</text>
+      <text class="mono sg-data" x="316" y="228" text-anchor="end" font-size="10" fill="#00fff0" letter-spacing="1">● LIVE</text>
+      <text class="mono sg-t-cyan-1" x="64" y="262" font-size="18" fill="#00fff0" font-weight="700" letter-spacing="-0.2" opacity="0">GitHub</text>
+      <text class="mono sg-t-mag-1" x="64" y="262" font-size="18" fill="#ff00aa" font-weight="700" letter-spacing="-0.2" opacity="0">GitHub</text>
+      <text class="mono" x="64" y="262" font-size="18" fill="#ffffff" font-weight="700" letter-spacing="-0.2">GitHub</text>
+      <text class="mono" x="64" y="286" font-size="10.5" fill="#4a4a5a" letter-spacing="0.5">github.com/azhibnmjkfr</text>
+      <rect class="sg-bar1" x="64" y="300" width="3" height="8" fill="#00fff0"/>
+      <rect class="sg-bar2" x="70" y="300" width="3" height="8" fill="#00fff0" opacity="0.7"/>
+      <rect class="sg-bar3" x="76" y="300" width="3" height="8" fill="#00fff0" opacity="0.5"/>
+      <rect x="82" y="300" width="3" height="8" fill="#4a4a5a" opacity="0.3"/>
+      <text class="mono sg-blink" x="316" y="306" text-anchor="end" font-size="10" fill="#00fff0">▸</text>
+      <rect class="sg-slice-1" x="48" y="260" width="284" height="3" fill="#00fff0" opacity="0"/>
+    </g>
+  </a>
+
+  <!-- CHANNEL 02 — EMAIL -->
+  <a href="mailto:ahmadzamanhuri.jakfar@gmail.com">
+    <g class="sg-ch-2">
+      <rect x="348" y="200" width="284" height="120" fill="#0a0a12" stroke="#1a1a2a" stroke-width="1"/>
+      <rect class="sg-edge" x="348" y="200" width="4" height="120" fill="url(#sgBorderMagenta)" style="animation-delay: 0.8s"/>
+      <rect class="sg-holo-scan" x="348" y="200" width="284" height="2" fill="#ff00aa" opacity="0.4" style="animation-delay: 0.8s"/>
+      <text class="mono" x="364" y="228" font-size="10" fill="#4a4a5a" letter-spacing="2">CH.02 — DIRECT</text>
+      <text class="mono sg-data" x="616" y="228" text-anchor="end" font-size="10" fill="#ff00aa" letter-spacing="1">● LIVE</text>
+      <text class="mono sg-t-cyan-2" x="364" y="262" font-size="18" fill="#00fff0" font-weight="700" letter-spacing="-0.2" opacity="0">Email</text>
+      <text class="mono sg-t-mag-2" x="364" y="262" font-size="18" fill="#ff00aa" font-weight="700" letter-spacing="-0.2" opacity="0">Email</text>
+      <text class="mono" x="364" y="262" font-size="18" fill="#ffffff" font-weight="700" letter-spacing="-0.2">Email</text>
+      <text class="mono" x="364" y="286" font-size="10.5" fill="#4a4a5a" letter-spacing="0.5">ahmadzamanhuri.jakfar@gmail.com</text>
+      <rect class="sg-bar2" x="364" y="300" width="3" height="8" fill="#ff00aa"/>
+      <rect class="sg-bar1" x="370" y="300" width="3" height="8" fill="#ff00aa" opacity="0.7"/>
+      <rect class="sg-bar3" x="376" y="300" width="3" height="8" fill="#ff00aa" opacity="0.5"/>
+      <rect x="382" y="300" width="3" height="8" fill="#4a4a5a" opacity="0.3"/>
+      <text class="mono sg-blink" x="616" y="306" text-anchor="end" font-size="10" fill="#ff00aa">▸</text>
+      <rect class="sg-slice-2" x="348" y="260" width="284" height="3" fill="#ff00aa" opacity="0"/>
+    </g>
+  </a>
+
+  <!-- CHANNEL 03 — CV ONLINE -->
+  <a href="https://azhibnmjkfr.pages.dev/" target="_blank">
+    <g class="sg-ch-3">
+      <rect x="648" y="200" width="284" height="120" fill="#0a0a12" stroke="#1a1a2a" stroke-width="1"/>
+      <rect class="sg-edge" x="648" y="200" width="4" height="120" fill="url(#sgBorderGold)" style="animation-delay: 1.6s"/>
+      <rect class="sg-holo-scan" x="648" y="200" width="284" height="2" fill="#ffcc00" opacity="0.4" style="animation-delay: 1.6s"/>
+      <text class="mono" x="664" y="228" font-size="10" fill="#4a4a5a" letter-spacing="2">CH.03 — PROFILE</text>
+      <text class="mono sg-data" x="916" y="228" text-anchor="end" font-size="10" fill="#ffcc00" letter-spacing="1">● LIVE</text>
+      <text class="mono sg-t-cyan-3" x="664" y="262" font-size="18" fill="#00fff0" font-weight="700" letter-spacing="-0.2" opacity="0">CV Online</text>
+      <text class="mono sg-t-mag-3" x="664" y="262" font-size="18" fill="#ff00aa" font-weight="700" letter-spacing="-0.2" opacity="0">CV Online</text>
+      <text class="mono" x="664" y="262" font-size="18" fill="#ffffff" font-weight="700" letter-spacing="-0.2">CV Online</text>
+      <text class="mono" x="664" y="286" font-size="10.5" fill="#4a4a5a" letter-spacing="0.5">azhibnmjkfr.pages.dev</text>
+      <rect class="sg-bar3" x="664" y="300" width="3" height="8" fill="#ffcc00"/>
+      <rect class="sg-bar1" x="670" y="300" width="3" height="8" fill="#ffcc00" opacity="0.7"/>
+      <rect class="sg-bar2" x="676" y="300" width="3" height="8" fill="#ffcc00" opacity="0.5"/>
+      <rect x="682" y="300" width="3" height="8" fill="#4a4a5a" opacity="0.3"/>
+      <text class="mono sg-blink" x="916" y="306" text-anchor="end" font-size="10" fill="#ffcc00">▸</text>
+      <rect class="sg-slice-3" x="648" y="260" width="284" height="3" fill="#ffcc00" opacity="0"/>
+    </g>
+  </a>
+
+  <!-- CHANNEL 04 — INSTAGRAM -->
+  <a href="https://www.instagram.com/for_iroh" target="_blank">
+    <g class="sg-ch-4">
+      <rect x="948" y="200" width="284" height="120" fill="#0a0a12" stroke="#1a1a2a" stroke-width="1"/>
+      <rect class="sg-edge" x="948" y="200" width="4" height="120" fill="url(#sgBorderMagenta)" style="animation-delay: 2.4s"/>
+      <rect class="sg-holo-scan" x="948" y="200" width="284" height="2" fill="#ff00aa" opacity="0.4" style="animation-delay: 2.4s"/>
+      <text class="mono" x="964" y="228" font-size="10" fill="#4a4a5a" letter-spacing="2">CH.04 — SOCIAL</text>
+      <text class="mono sg-data" x="1216" y="228" text-anchor="end" font-size="10" fill="#ff00aa" letter-spacing="1">● LIVE</text>
+      <text class="mono sg-t-cyan-4" x="964" y="262" font-size="18" fill="#00fff0" font-weight="700" letter-spacing="-0.2" opacity="0">Instagram</text>
+      <text class="mono sg-t-mag-4" x="964" y="262" font-size="18" fill="#ff00aa" font-weight="700" letter-spacing="-0.2" opacity="0">Instagram</text>
+      <text class="mono" x="964" y="262" font-size="18" fill="#ffffff" font-weight="700" letter-spacing="-0.2">Instagram</text>
+      <text class="mono" x="964" y="286" font-size="10.5" fill="#4a4a5a" letter-spacing="0.5">@azhibnmjkfr</text>
+      <rect class="sg-bar1" x="964" y="300" width="3" height="8" fill="#ff00aa"/>
+      <rect class="sg-bar3" x="970" y="300" width="3" height="8" fill="#ff00aa" opacity="0.7"/>
+      <rect class="sg-bar2" x="976" y="300" width="3" height="8" fill="#ff00aa" opacity="0.5"/>
+      <rect x="982" y="300" width="3" height="8" fill="#4a4a5a" opacity="0.3"/>
+      <text class="mono sg-blink" x="1216" y="306" text-anchor="end" font-size="10" fill="#ff00aa">▸</text>
+      <rect class="sg-slice-4" x="948" y="260" width="284" height="3" fill="#ff00aa" opacity="0"/>
+    </g>
+  </a>
+
+  <line x1="48" y1="350" x2="1232" y2="350" stroke="#1a1a2a" stroke-width="1"/>
+
+  <text class="mono" x="48" y="382" font-size="11" fill="#4a4a5a" letter-spacing="2">▸ SIGNAL.STRENGTH</text>
+
+  <rect x="240" y="372" width="300" height="10" fill="#0a0a12" stroke="#1a1a2a" stroke-width="0.5"/>
+  <rect x="240" y="372" width="282" height="10" fill="#00fff0" opacity="0.6"/>
+  <rect x="240" y="372" width="282" height="10" fill="url(#sgHoloGrad)" opacity="0.3"/>
+
+  <text class="mono" x="556" y="381" font-size="11" fill="#00fff0" letter-spacing="1">94%</text>
+
+  <text class="mono sg-data" x="1232" y="382" text-anchor="end" font-size="11" fill="#4a4a5a" letter-spacing="2">LATENCY: 12ms</text>
+
+  <line x1="48" y1="410" x2="1232" y2="410" stroke="#1a1a2a" stroke-width="1"/>
+
+  <text class="mono" x="48" y="440" font-size="11" fill="#4a4a5a" letter-spacing="2">▸ TRANSMISSION.COMPLETE</text>
+
+  <text class="mono sg-blink" x="1232" y="440" text-anchor="end" font-size="11" fill="#00fff0" letter-spacing="2">▸ READY</text>
+
+  <line x1="48" y1="460" x2="88" y2="460" stroke="#ffcc00" stroke-width="1.5" opacity="0.7"/>
+  <line x1="98" y1="460" x2="118" y2="460" stroke="#ffcc00" stroke-width="1.5" opacity="0.4"/>
+  <line x1="128" y1="460" x2="138" y2="460" stroke="#ffcc00" stroke-width="1.5" opacity="0.2"/>
+
+</svg>

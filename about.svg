@@ -1,0 +1,264 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 680" width="1280" height="680" role="img" aria-label="VHS.MEMORY — about Azhibnmjkfr">
+  <defs>
+    <linearGradient id="vhGoldGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffcc00"/>
+      <stop offset="50%" stop-color="#ffe680"/>
+      <stop offset="100%" stop-color="#ffcc00"/>
+    </linearGradient>
+
+    <radialGradient id="vhBgGrad" cx="50%" cy="50%" r="80%">
+      <stop offset="0%" stop-color="#0a0a12"/>
+      <stop offset="100%" stop-color="#000000"/>
+    </radialGradient>
+
+    <linearGradient id="vhBleed" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00fff0" stop-opacity="0"/>
+      <stop offset="30%" stop-color="#00fff0" stop-opacity="0.15"/>
+      <stop offset="50%" stop-color="#ff00aa" stop-opacity="0.1"/>
+      <stop offset="70%" stop-color="#ffcc00" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#ff00aa" stop-opacity="0"/>
+    </linearGradient>
+
+    <filter id="vhSoftGlow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="10" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="vhNoise">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="4" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.08"/>
+      </feComponentTransfer>
+    </filter>
+
+    <filter id="vhTapeNoise">
+      <feTurbulence type="turbulence" baseFrequency="0.05 0.9" numOctaves="2" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.04"/>
+      </feComponentTransfer>
+    </filter>
+
+    <style>
+      .mono { font-family: 'SF Mono', 'Fira Code', 'Consolas', 'Courier New', monospace; }
+
+      @keyframes vhTracking {
+        0% { transform: translateY(-100px); opacity: 0; }
+        3% { opacity: 0.7; }
+        15% { opacity: 0.7; }
+        18% { opacity: 0; transform: translateY(680px); }
+        100% { opacity: 0; transform: translateY(680px); }
+      }
+
+      @keyframes vhTracking2 {
+        0% { transform: translateY(-100px); opacity: 0; }
+        42% { opacity: 0.5; }
+        55% { opacity: 0.5; }
+        58% { opacity: 0; transform: translateY(680px); }
+        100% { opacity: 0; transform: translateY(680px); }
+      }
+
+      @keyframes vhJitter {
+        0%, 100% { transform: translateX(0); }
+        46% { transform: translateX(0); }
+        47% { transform: translateX(-2px); }
+        48% { transform: translateX(2px); }
+        49% { transform: translateX(-1px); }
+        50% { transform: translateX(0); }
+        82% { transform: translateX(0); }
+        83% { transform: translateX(3px); }
+        84% { transform: translateX(-1px); }
+        85% { transform: translateX(0); }
+      }
+
+      @keyframes vhRec {
+        0%, 49%, 100% { opacity: 1; }
+        50%, 99% { opacity: 0.1; }
+      }
+
+      @keyframes vhScanline {
+        0% { transform: translateY(-680px); }
+        100% { transform: translateY(680px); }
+      }
+
+      @keyframes vhTime {
+        0%, 90%, 100% { opacity: 0.8; }
+        92% { opacity: 0.2; }
+        94% { opacity: 1; }
+        96% { opacity: 0.3; }
+      }
+
+      @keyframes vhBlink {
+        0%, 49% { opacity: 1; }
+        50%, 100% { opacity: 0; }
+      }
+
+      @keyframes vhFlicker {
+        0%, 100% { opacity: 1; }
+        22% { opacity: 1; }
+        23% { opacity: 0.75; }
+        24% { opacity: 1; }
+        67% { opacity: 1; }
+        68% { opacity: 0.85; }
+        69% { opacity: 1; }
+      }
+
+      .vh-tracking-1 { animation: vhTracking 6s linear infinite; }
+      .vh-tracking-2 { animation: vhTracking2 8s linear infinite; }
+      .vh-jitter { animation: vhJitter 4s ease-in-out infinite; }
+      .vh-rec { animation: vhRec 1.2s step-end infinite; }
+      .vh-scanline { animation: vhScanline 4s linear infinite; }
+      .vh-time { animation: vhTime 3s ease-in-out infinite; }
+      .vh-blink { animation: vhBlink 1s step-end infinite; }
+      .vh-flicker { animation: vhFlicker 3s ease-in-out infinite; }
+    </style>
+  </defs>
+
+  <rect width="1280" height="680" fill="url(#vhBgGrad)"/>
+  <rect width="1280" height="680" filter="url(#vhTapeNoise)" opacity="0.7"/>
+  <rect width="1280" height="680" filter="url(#vhNoise)" opacity="0.4"/>
+  <rect x="0" y="0" width="1280" height="680" fill="url(#vhBleed)" opacity="0.4"/>
+
+  <ellipse cx="400" cy="340" rx="350" ry="220" fill="#00fff0" opacity="0.05" filter="url(#vhSoftGlow)"/>
+  <ellipse cx="900" cy="380" rx="300" ry="200" fill="#ff00aa" opacity="0.04" filter="url(#vhSoftGlow)"/>
+
+  <rect class="vh-tracking-1" x="0" y="0" width="1280" height="3" fill="#ffffff" opacity="0"/>
+  <rect class="vh-tracking-2" x="0" y="0" width="1280" height="2" fill="#00fff0" opacity="0"/>
+  <rect class="vh-scanline" x="0" y="0" width="1280" height="1" fill="#ffffff" opacity="0.06"/>
+
+  <!-- HEADER -->
+  <circle class="vh-rec" cx="60" cy="52" r="5" fill="#ff0040"/>
+  <text class="mono" x="76" y="57" font-size="11" fill="#ffffff" font-weight="700" letter-spacing="2.5">REC</text>
+  <text class="mono vh-time" x="140" y="57" font-size="10" fill="#ffe680" letter-spacing="2">▶ PLAY</text>
+  <text class="mono vh-time" x="1232" y="57" text-anchor="end" font-size="11" fill="#00fff0" letter-spacing="2">00:00:00:00</text>
+
+  <line x1="48" y1="76" x2="1232" y2="76" stroke="#1a1a2a" stroke-width="1"/>
+  <line x1="48" y1="77" x2="248" y2="77" stroke="url(#vhGoldGrad)" stroke-width="1" opacity="0.6"/>
+
+  <!-- TITLE -->
+  <g class="vh-jitter">
+    <text class="mono vh-flicker" x="48" y="142" font-size="38" fill="#ffffff" font-weight="700" letter-spacing="-0.5">VHS.MEMORY</text>
+    <text class="mono vh-jitter" x="330" y="142" font-size="38" fill="#ff00aa" font-weight="700" letter-spacing="-0.5" opacity="0.25">▶</text>
+  </g>
+
+  <text class="mono" x="48" y="172" font-size="11" fill="#4a4a5a" letter-spacing="3">TAPE.01 — PERSONAL.RECORDING</text>
+  <text class="mono" x="1232" y="172" text-anchor="end" font-size="11" fill="#4a4a5a" letter-spacing="2">SP · 08Y</text>
+
+  <line x1="48" y1="196" x2="1232" y2="196" stroke="#1a1a2a" stroke-width="1"/>
+
+  <!-- BIO -->
+  <text class="mono" x="48" y="228" font-size="10" fill="#00fff0" letter-spacing="2">▸ 00:01 — BIO</text>
+  <text class="mono vh-jitter" x="48" y="256" font-size="13" fill="#ffffff" font-weight="600" letter-spacing="0.3">English educator with a builder's mind.</text>
+  <text class="mono" x="48" y="276" font-size="11.5" fill="#4a4a5a" letter-spacing="0.3">Teaching language by day, prototyping tools by night.</text>
+
+  <!-- TEACHING TIMELINE -->
+  <text class="mono" x="48" y="316" font-size="10" fill="#00fff0" letter-spacing="2">▸ 00:23 — TEACHING.LOG</text>
+
+  <line x1="88" y1="336" x2="88" y2="500" stroke="#1a1a2a" stroke-width="1" stroke-dasharray="2 4"/>
+
+  <rect x="84" y="340" width="8" height="8" fill="#00fff0" opacity="0.8"/>
+  <text class="mono" x="108" y="348" font-size="12" fill="#ffffff" font-weight="600" letter-spacing="0.2">SD-SMP Islam Akhlaqul Quran</text>
+  <text class="mono" x="108" y="362" font-size="10" fill="#4a4a5a" letter-spacing="0.3">English Teacher · Banda Aceh</text>
+
+  <rect x="84" y="370" width="8" height="8" fill="#00fff0" opacity="0.8"/>
+  <text class="mono" x="108" y="378" font-size="12" fill="#ffffff" font-weight="600" letter-spacing="0.2">MTsT Daarut Tahfizh Al-Ikhlas</text>
+  <text class="mono" x="108" y="392" font-size="10" fill="#4a4a5a" letter-spacing="0.3">English Teacher · Banda Aceh</text>
+
+  <rect x="84" y="400" width="8" height="8" fill="#00fff0" opacity="0.8"/>
+  <text class="mono" x="108" y="408" font-size="12" fill="#ffffff" font-weight="600" letter-spacing="0.2">Kala Academy</text>
+  <text class="mono" x="108" y="422" font-size="10" fill="#4a4a5a" letter-spacing="0.3">English Teacher · Banda Aceh</text>
+
+  <rect x="84" y="430" width="8" height="8" fill="#00fff0" opacity="0.8"/>
+  <text class="mono" x="108" y="438" font-size="12" fill="#ffffff" font-weight="600" letter-spacing="0.2">Institut Aceh Caroeng Private</text>
+  <text class="mono" x="108" y="452" font-size="10" fill="#4a4a5a" letter-spacing="0.3">English Teacher · Banda Aceh</text>
+
+  <rect x="84" y="460" width="8" height="8" fill="#00fff0" opacity="0.8"/>
+  <text class="mono" x="108" y="468" font-size="12" fill="#ffffff" font-weight="600" letter-spacing="0.2">Dayah Ruhul Islam Anak Bangsa</text>
+  <text class="mono" x="108" y="482" font-size="10" fill="#4a4a5a" letter-spacing="0.3">Structure Teacher · Aceh Besar</text>
+
+  <rect x="84" y="490" width="8" height="8" fill="#ffcc00" opacity="1"/>
+  <rect x="82" y="488" width="12" height="12" fill="none" stroke="#ffcc00" stroke-width="1" opacity="0.6" class="vh-blink"/>
+  <text class="mono" x="108" y="498" font-size="12" fill="#ffe680" font-weight="600" letter-spacing="0.2">International English School</text>
+  <text class="mono" x="108" y="512" font-size="10" fill="#4a4a5a" letter-spacing="0.3">English Teacher · Banda Aceh</text>
+
+  <!-- FOCUS -->
+  <text class="mono" x="48" y="556" font-size="10" fill="#00fff0" letter-spacing="2">▸ 01:47 — FOCUS</text>
+  <text class="mono" x="48" y="580" font-size="11" fill="#ffffff" letter-spacing="0.3">◆ EDUCATION</text>
+  <text class="mono" x="180" y="580" font-size="11" fill="#ffffff" letter-spacing="0.3">◆ DIGITAL</text>
+  <text class="mono" x="300" y="580" font-size="11" fill="#ffffff" letter-spacing="0.3">◆ LANGUAGE</text>
+  <text class="mono" x="48" y="598" font-size="10" fill="#4a4a5a" letter-spacing="0.3">modules · web · EN↔ID</text>
+
+  <!-- LANGUAGES -->
+  <text class="mono" x="48" y="632" font-size="10" fill="#00fff0" letter-spacing="2">▸ 02:04 — LANGUAGES</text>
+  <text class="mono" x="48" y="656" font-size="11" fill="#ffffff" letter-spacing="0.3">Aceh</text>
+  <text class="mono" x="120" y="656" font-size="10" fill="#4a4a5a" letter-spacing="0.3">native</text>
+  <text class="mono" x="220" y="656" font-size="11" fill="#ffffff" letter-spacing="0.3">Indonesia</text>
+  <text class="mono" x="320" y="656" font-size="10" fill="#4a4a5a" letter-spacing="0.3">native</text>
+  <text class="mono" x="420" y="656" font-size="11" fill="#ffffff" letter-spacing="0.3">English</text>
+  <text class="mono" x="500" y="656" font-size="10" fill="#4a4a5a" letter-spacing="0.3">fluent · EN↔ID</text>
+
+  <!-- MANIFESTO -->
+  <text class="mono" x="680" y="228" font-size="10" fill="#ffcc00" letter-spacing="2">▸ 02:47 — MANIFESTO</text>
+  <rect x="680" y="240" width="2" height="52" fill="#ffcc00" opacity="0.6"/>
+  <text class="mono" x="696" y="256" font-size="13" fill="#ffe680" font-style="italic" letter-spacing="0.2">"Membangun produk digital yang berdampak</text>
+  <text class="mono" x="696" y="278" font-size="13" fill="#ffe680" font-style="italic" letter-spacing="0.2">dengan integritas, melalui bahasa dan AI."</text>
+
+  <!-- RIGHT PANEL — TAPE.INFO -->
+  <rect x="820" y="300" width="412" height="332" rx="0" fill="none" stroke="#1a1a2a" stroke-width="1"/>
+  <rect x="820" y="300" width="412" height="332" rx="0" fill="#00fff0" opacity="0.02"/>
+
+  <rect x="820" y="300" width="412" height="28" fill="#0a0a12"/>
+  <text class="mono" x="836" y="319" font-size="10" fill="#00fff0" font-weight="600" letter-spacing="2.5">▸ TAPE.INFO</text>
+  <text class="mono" x="1216" y="319" text-anchor="end" font-size="9" fill="#4a4a5a" letter-spacing="1.5">SP</text>
+  <line x1="820" y1="328" x2="1232" y2="328" stroke="#1a1a2a" stroke-width="1"/>
+
+  <g class="mono" font-size="11">
+    <text x="840" y="360" fill="#4a4a5a" letter-spacing="1.5">TAPE.ID</text>
+    <text x="1216" y="360" text-anchor="end" fill="#ffffff" font-weight="500" letter-spacing="1">AZH-2024-001</text>
+
+    <text x="840" y="386" fill="#4a4a5a" letter-spacing="1.5">SUBJECT</text>
+    <text x="1216" y="386" text-anchor="end" fill="#00fff0" font-weight="600" letter-spacing="1">AZHIBNMJKFR</text>
+
+    <text x="840" y="412" fill="#4a4a5a" letter-spacing="1.5">LOCATION</text>
+    <text x="1216" y="412" text-anchor="end" fill="#ffffff" font-weight="500" letter-spacing="1">BANDA ACEH, ID</text>
+
+    <text x="840" y="438" fill="#4a4a5a" letter-spacing="1.5">AFFILIATION</text>
+    <text x="1216" y="438" text-anchor="end" fill="#ffffff" font-weight="500" letter-spacing="1">UIN AR-RANIRY</text>
+
+    <text x="840" y="464" fill="#4a4a5a" letter-spacing="1.5">LANGUAGES</text>
+    <text x="1216" y="464" text-anchor="end" fill="#ffffff" font-weight="500" letter-spacing="1">EN ↔ ID</text>
+
+    <text x="840" y="490" fill="#4a4a5a" letter-spacing="1.5">STATUS</text>
+    <text x="1216" y="490" text-anchor="end" fill="#ffcc00" font-weight="600" letter-spacing="1">ACTIVE</text>
+  </g>
+
+  <line x1="836" y1="510" x2="1216" y2="510" stroke="#1a1a2a" stroke-width="1" stroke-dasharray="2 4"/>
+
+  <text class="mono" x="836" y="534" font-size="10" fill="#ff00aa" letter-spacing="1.5">▸ TRACKING</text>
+
+  <rect x="836" y="546" width="380" height="8" fill="#0a0a12" stroke="#1a1a2a" stroke-width="0.5"/>
+  <rect x="836" y="546" width="280" height="8" fill="#00fff0" opacity="0.4"/>
+  <rect x="836" y="546" width="280" height="8" fill="url(#vhBleed)" opacity="0.6"/>
+
+  <text class="mono vh-blink" x="836" y="580" font-size="11" fill="#00fff0" letter-spacing="1">▸</text>
+  <rect class="vh-blink" x="856" y="570" width="8" height="12" fill="#ffcc00"/>
+  <text class="mono vh-time" x="1216" y="580" text-anchor="end" font-size="10" fill="#4a4a5a" letter-spacing="1.5">00:02:47:12</text>
+
+  <text class="mono" x="836" y="610" font-size="9.5" fill="#4a4a5a" letter-spacing="1.5">SESSION: ACTIVE</text>
+  <text class="mono" x="1216" y="610" text-anchor="end" font-size="9.5" fill="#4a4a5a" letter-spacing="1.5">0x1F2A</text>
+
+  <path d="M 820 320 L 820 300 L 840 300" fill="none" stroke="#00fff0" stroke-width="1.5" opacity="0.6"/>
+  <path d="M 1212 300 L 1232 300 L 1232 320" fill="none" stroke="#00fff0" stroke-width="1.5" opacity="0.6"/>
+  <path d="M 1232 612 L 1232 632 L 1212 632" fill="none" stroke="#00fff0" stroke-width="1.5" opacity="0.6"/>
+  <path d="M 840 632 L 820 632 L 820 612" fill="none" stroke="#00fff0" stroke-width="1.5" opacity="0.6"/>
+
+  <!-- FOOTER -->
+  <line x1="48" y1="660" x2="1232" y2="660" stroke="#1a1a2a" stroke-width="1"/>
+  <text class="mono vh-time" x="48" y="674" font-size="10" fill="#4a4a5a" letter-spacing="3">◼◼◼◼◼◼◼◼◼◼ SP · TRACKING · PLAY</text>
+  <text class="mono vh-time" x="1232" y="674" text-anchor="end" font-size="10" fill="#4a4a5a" letter-spacing="2">END.OF.TAPE</text>
+
+</svg>

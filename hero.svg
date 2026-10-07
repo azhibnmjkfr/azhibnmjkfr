@@ -1,0 +1,307 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 600" width="1280" height="600" role="img" aria-label="Azhibnmjkfr">
+  <defs>
+    <linearGradient id="hxGoldGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffcc00"/>
+      <stop offset="50%" stop-color="#ffe680"/>
+      <stop offset="100%" stop-color="#ffcc00"/>
+    </linearGradient>
+
+    <radialGradient id="hxBgGrad" cx="50%" cy="50%" r="80%">
+      <stop offset="0%" stop-color="#0a0a12"/>
+      <stop offset="100%" stop-color="#000000"/>
+    </radialGradient>
+
+    <filter id="hxSoftGlow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="10" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="hxNoise">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="4" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.06"/>
+      </feComponentTransfer>
+    </filter>
+
+    <style>
+      .mono { font-family: 'SF Mono', 'Fira Code', 'Consolas', 'Courier New', monospace; }
+
+      @keyframes hxSplitCyan {
+        0%, 78%, 100% { transform: translateX(0); opacity: 0; }
+        80% { transform: translateX(-3px); opacity: 0.8; }
+        84% { transform: translateX(3px); opacity: 0.8; }
+        88% { transform: translateX(-2px); opacity: 0.5; }
+        92% { transform: translateX(0); opacity: 0; }
+      }
+
+      @keyframes hxSplitMagenta {
+        0%, 78%, 100% { transform: translateX(0); opacity: 0; }
+        80% { transform: translateX(3px); opacity: 0.8; }
+        84% { transform: translateX(-3px); opacity: 0.8; }
+        88% { transform: translateX(2px); opacity: 0.5; }
+        92% { transform: translateX(0); opacity: 0; }
+      }
+
+      @keyframes hxSlice1 {
+        0%, 80%, 100% { transform: translateX(0); opacity: 0; }
+        82% { transform: translateX(-6px); opacity: 1; }
+        86% { transform: translateX(4px); opacity: 1; }
+        90% { transform: translateX(-2px); opacity: 0.6; }
+        94% { transform: translateX(0); opacity: 0; }
+      }
+
+      @keyframes hxSlice2 {
+        0%, 84%, 100% { transform: translateX(0); opacity: 0; }
+        86% { transform: translateX(8px); opacity: 1; }
+        90% { transform: translateX(-4px); opacity: 1; }
+        94% { transform: translateX(3px); opacity: 0.5; }
+        96% { transform: translateX(0); opacity: 0; }
+      }
+
+      @keyframes hxFlicker {
+        0%, 100% { opacity: 1; }
+        47% { opacity: 1; }
+        48% { opacity: 0.75; }
+        49% { opacity: 1; }
+        75% { opacity: 1; }
+        76% { opacity: 0.85; }
+        77% { opacity: 1; }
+      }
+
+      @keyframes hxScanline {
+        0% { transform: translateY(-600px); opacity: 0; }
+        8% { opacity: 1; }
+        92% { opacity: 1; }
+        100% { transform: translateY(600px); opacity: 0; }
+      }
+
+      @keyframes hxScanlineFast {
+        0% { transform: translateY(-600px); opacity: 0; }
+        5% { opacity: 0.8; }
+        95% { opacity: 0.8; }
+        100% { transform: translateY(600px); opacity: 0; }
+      }
+
+      @keyframes hxBlink {
+        0%, 49% { opacity: 1; }
+        50%, 100% { opacity: 0; }
+      }
+
+      @keyframes hxData {
+        0%, 90%, 100% { opacity: 0.7; }
+        92% { opacity: 0.2; }
+        94% { opacity: 1; }
+        96% { opacity: 0.4; }
+      }
+
+      @keyframes hxBorder {
+        0%, 88%, 100% { stroke-opacity: 0.3; }
+        90% { stroke-opacity: 0.9; }
+        92% { stroke-opacity: 0.1; }
+        94% { stroke-opacity: 0.7; }
+      }
+
+      @keyframes hxLed {
+        0%, 49%, 100% { opacity: 1; }
+        50%, 99% { opacity: 0.15; }
+      }
+
+      @keyframes hxGlitchBar {
+        0%, 88%, 100% { opacity: 0; transform: scaleX(0); }
+        90% { opacity: 1; transform: scaleX(1); }
+        92% { opacity: 0.4; transform: scaleX(0.6); }
+        94% { opacity: 0; transform: scaleX(0); }
+      }
+
+      @keyframes hxGlitchBar2 {
+        0%, 76%, 100% { opacity: 0; transform: scaleX(0); }
+        78% { opacity: 0.8; transform: scaleX(1); }
+        80% { opacity: 0.3; transform: scaleX(0.4); }
+        82% { opacity: 0; transform: scaleX(0); }
+      }
+
+      .hx-name { animation: hxFlicker 3s ease-in-out infinite; }
+      .hx-cyan { animation: hxSplitCyan 3.2s ease-in-out infinite; }
+      .hx-magenta { animation: hxSplitMagenta 3.2s ease-in-out infinite; }
+      .hx-slice1 { animation: hxSlice1 3.2s ease-in-out infinite; }
+      .hx-slice2 { animation: hxSlice2 3.2s ease-in-out infinite; }
+      .hx-scanline { animation: hxScanline 3.5s linear infinite; }
+      .hx-scanline-fast { animation: hxScanlineFast 1.8s linear infinite; }
+      .hx-blink { animation: hxBlink 1s step-end infinite; }
+      .hx-data { animation: hxData 2.5s ease-in-out infinite; }
+      .hx-border { animation: hxBorder 3s ease-in-out infinite; }
+      .hx-led { animation: hxLed 1.2s step-end infinite; }
+      .hx-glitchbar { animation: hxGlitchBar 4s ease-in-out infinite; transform-origin: 0 50%; transform-box: view-box; }
+      .hx-glitchbar2 { animation: hxGlitchBar2 5s ease-in-out infinite; transform-origin: 0 50%; transform-box: view-box; }
+
+      /* === TYPING EMAIL: kursor kotak kuning yang memproduksi huruf === */
+      @keyframes hxCursorMove {
+        0%      { transform: translateX(0); }
+        6%      { transform: translateX(0); }
+        50%     { transform: translateX(220.1px); }
+        78%     { transform: translateX(220.1px); }
+        94%     { transform: translateX(0); }
+        100%    { transform: translateX(0); }
+      }
+      @keyframes hxTypeReveal {
+        0%      { clip-path: inset(0 220.1px 0 0); }
+        6%      { clip-path: inset(0 220.1px 0 0); }
+        50%     { clip-path: inset(0 0px 0 0); }
+        78%     { clip-path: inset(0 0px 0 0); }
+        94%     { clip-path: inset(0 220.1px 0 0); }
+        100%    { clip-path: inset(0 220.1px 0 0); }
+      }
+      @keyframes hxCursorBlink {
+        0%, 50%   { opacity: 1; }
+        51%, 54%  { opacity: 0; }
+        55%, 59%  { opacity: 1; }
+        60%, 64%  { opacity: 0; }
+        65%, 69%  { opacity: 1; }
+        70%, 74%  { opacity: 0; }
+        75%, 100% { opacity: 1; }
+      }
+      .hx-cursor { animation: hxCursorMove 6s linear infinite; transform-box: fill-box; }
+      .hx-email-reveal { animation: hxTypeReveal 6s linear infinite; }
+      .hx-cursor-blink { animation: hxCursorBlink 6s step-end infinite; }
+    </style>
+  </defs>
+
+  <rect width="1280" height="600" fill="url(#hxBgGrad)"/>
+
+  <g opacity="0.15">
+    <line x1="0" y1="100" x2="1280" y2="100" stroke="#1a1a2a" stroke-width="0.5"/>
+    <line x1="0" y1="200" x2="1280" y2="200" stroke="#1a1a2a" stroke-width="0.5"/>
+    <line x1="0" y1="300" x2="1280" y2="300" stroke="#1a1a2a" stroke-width="0.5"/>
+    <line x1="0" y1="400" x2="1280" y2="400" stroke="#1a1a2a" stroke-width="0.5"/>
+    <line x1="0" y1="500" x2="1280" y2="500" stroke="#1a1a2a" stroke-width="0.5"/>
+    <line x1="100" y1="0" x2="100" y2="600" stroke="#1a1a2a" stroke-width="0.5"/>
+    <line x1="300" y1="0" x2="300" y2="600" stroke="#1a1a2a" stroke-width="0.5"/>
+    <line x1="500" y1="0" x2="500" y2="600" stroke="#1a1a2a" stroke-width="0.5"/>
+    <line x1="700" y1="0" x2="700" y2="600" stroke="#1a1a2a" stroke-width="0.5"/>
+    <line x1="900" y1="0" x2="900" y2="600" stroke="#1a1a2a" stroke-width="0.5"/>
+    <line x1="1100" y1="0" x2="1100" y2="600" stroke="#1a1a2a" stroke-width="0.5"/>
+  </g>
+
+  <rect width="1280" height="600" filter="url(#hxNoise)" opacity="0.5"/>
+
+  <ellipse cx="300" cy="280" rx="320" ry="200" fill="#00fff0" opacity="0.06" filter="url(#hxSoftGlow)"/>
+  <ellipse cx="1000" cy="380" rx="300" ry="180" fill="#ff00aa" opacity="0.05" filter="url(#hxSoftGlow)"/>
+
+  <rect class="hx-scanline" x="0" y="0" width="1280" height="2" fill="#00fff0" opacity="0.4"/>
+  <rect class="hx-scanline-fast" x="0" y="0" width="1280" height="1" fill="#ff00aa" opacity="0.3" style="animation-delay: 0.9s"/>
+
+  <rect class="hx-glitchbar" x="820" y="70" width="180" height="2" fill="#00fff0" opacity="0"/>
+  <rect class="hx-glitchbar2" x="48" y="510" width="240" height="2" fill="#ff00aa" opacity="0"/>
+  <rect class="hx-glitchbar" x="700" y="330" width="80" height="1.5" fill="#ffcc00" opacity="0" style="animation-delay: 1.5s"/>
+
+  <text class="mono" x="48" y="52" font-size="11" fill="#00fff0" font-weight="600" letter-spacing="3" opacity="0.8">/// SYSTEM.IDENTITY</text>
+  <text class="mono" x="1232" y="52" text-anchor="end" font-size="10" fill="#4a4a5a" letter-spacing="2">v2.0 — 0x7F3A</text>
+
+  <line x1="48" y1="68" x2="1232" y2="68" stroke="#1a1a2a" stroke-width="1"/>
+
+  <rect x="48" y="92" width="240" height="30" rx="0" fill="none" stroke="#ffcc00" stroke-width="1" opacity="0.7" class="hx-border"/>
+  <rect x="48" y="92" width="240" height="30" rx="0" fill="#ffcc00" opacity="0.04"/>
+  <rect class="hx-led" x="64" y="104" width="6" height="6" fill="#00fff0"/>
+  <text class="mono" x="82" y="112" font-size="10.5" fill="#ffcc00" font-weight="600" letter-spacing="2">OPEN TO COLLABORATION</text>
+
+  <text class="mono hx-cyan" x="48" y="270" font-size="88" fill="#00fff0" font-weight="700" letter-spacing="-2" opacity="0">AZHIBNMJKFR</text>
+  <text class="mono hx-magenta" x="48" y="270" font-size="88" fill="#ff00aa" font-weight="700" letter-spacing="-2" opacity="0">AZHIBNMJKFR</text>
+  <text class="mono hx-slice1" x="48" y="270" font-size="88" fill="#ffcc00" font-weight="700" letter-spacing="-2" opacity="0">AZHIBNMJKFR</text>
+  <text class="mono hx-slice2" x="48" y="270" font-size="88" fill="#ff00aa" font-weight="700" letter-spacing="-2" opacity="0">AZHIBNMJKFR</text>
+  <text class="mono hx-name" x="48" y="270" font-size="88" fill="#ffffff" font-weight="700" letter-spacing="-2">AZHIBNMJKFR</text>
+
+  <line x1="48" y1="294" x2="648" y2="294" stroke="url(#hxGoldGrad)" stroke-width="1.5" opacity="0.7"/>
+
+  <text class="mono" x="48" y="336" font-size="13" fill="#00fff0" font-weight="600" letter-spacing="4">ENGLISH EDUCATOR</text>
+  <text class="mono" x="48" y="358" font-size="13" fill="#ff00aa" font-weight="600" letter-spacing="4">DIGITAL BUILDER</text>
+  <text class="mono" x="48" y="380" font-size="13" fill="#ffcc00" font-weight="600" letter-spacing="4">WRITER</text>
+
+  <text class="mono" x="48" y="428" font-size="12" fill="#4a4a5a" font-style="italic" letter-spacing="0.5">"Menjembatani bahasa dan teknologi."</text>
+
+  <text class="mono" x="48" y="470" font-size="10.5" fill="#4a4a5a" letter-spacing="2">LOC: BANDA ACEH, ID</text>
+  <text class="mono" x="288" y="470" font-size="10.5" fill="#4a4a5a" letter-spacing="2">AFF: UIN AR-RANIRY</text>
+  <text class="mono" x="528" y="470" font-size="10.5" fill="#4a4a5a" letter-spacing="2">LANG: EN ↔ ID</text>
+
+  <rect x="820" y="92" width="412" height="440" rx="0" fill="none" stroke="#1a1a2a" stroke-width="1"/>
+  <rect x="820" y="92" width="412" height="440" rx="0" fill="#00fff0" opacity="0.02"/>
+
+  <rect x="820" y="92" width="412" height="32" fill="#0a0a12"/>
+  <text class="mono" x="836" y="113" font-size="10" fill="#00fff0" font-weight="600" letter-spacing="2.5">◉ STATUS</text>
+  <text class="mono" x="1216" y="113" text-anchor="end" font-size="9" fill="#4a4a5a" letter-spacing="1.5">0x01</text>
+  <line x1="820" y1="124" x2="1232" y2="124" stroke="#1a1a2a" stroke-width="1"/>
+
+  <g class="mono" font-size="11">
+    <text x="840" y="160" fill="#4a4a5a" letter-spacing="1.5">STATE</text>
+    <text x="1216" y="160" text-anchor="end" fill="#00fff0" font-weight="600" letter-spacing="1">ONLINE</text>
+
+    <text x="840" y="186" fill="#4a4a5a" letter-spacing="1.5">LAST.UPDATE</text>
+    <text x="1216" y="186" text-anchor="end" fill="#ffffff" font-weight="500" letter-spacing="1">Recently</text>
+
+    <text x="840" y="212" fill="#4a4a5a" letter-spacing="1.5">LOCATION</text>
+    <text x="1216" y="212" text-anchor="end" fill="#ffffff" font-weight="500" letter-spacing="1">BANDA ACEH, ID</text>
+
+    <text x="840" y="238" fill="#4a4a5a" letter-spacing="1.5">CONTACT</text>
+    <text x="1216" y="238" text-anchor="end" fill="#ffcc00" font-weight="600" letter-spacing="1">azhibnmjkfr.pages.dev</text>
+  </g>
+
+  <line x1="836" y1="260" x2="1216" y2="260" stroke="#1a1a2a" stroke-width="1" stroke-dasharray="2 4"/>
+
+  <text class="mono" x="836" y="290" font-size="10" fill="#ff00aa" font-weight="600" letter-spacing="2.5">▸ OPEN.SOURCE</text>
+
+  <g class="mono" font-size="11">
+    <text x="840" y="320" fill="#00fff0" letter-spacing="1">[0x01]</text>
+    <text x="900" y="320" fill="#ffffff" letter-spacing="1">github.com/azhibnmjkfr</text>
+    <text x="1180" y="320" fill="#4a4a5a" letter-spacing="1">REPO</text>
+
+    <text x="840" y="344" fill="#00fff0" letter-spacing="1">[0x02]</text>
+    <text x="900" y="344" fill="#ffffff" letter-spacing="1">lumen</text>
+    <text x="1180" y="344" fill="#4a4a5a" letter-spacing="1">PWA</text>
+
+    <text x="840" y="368" fill="#00fff0" letter-spacing="1">[0x03]</text>
+    <text x="900" y="368" fill="#ffffff" letter-spacing="1">engwardlab</text>
+    <text x="1180" y="368" fill="#4a4a5a" letter-spacing="1">EDTECH</text>
+
+    <text x="840" y="392" fill="#00fff0" letter-spacing="1">[0x04]</text>
+    <text x="900" y="392" fill="#ffffff" letter-spacing="1">tenses12</text>
+    <text x="1180" y="392" fill="#4a4a5a" letter-spacing="1">PWA</text>
+
+    <text x="840" y="416" fill="#00fff0" letter-spacing="1">[0x05]</text>
+    <text x="900" y="416" fill="#ffffff" letter-spacing="1">azhai-generator</text>
+    <text x="1180" y="416" fill="#4a4a5a" letter-spacing="1">AI</text>
+  </g>
+
+  <!-- EMAIL TYPING — kursor kotak kuning memproduksi huruf -->
+  <text class="mono" x="840" y="448" font-size="11" fill="#00fff0" letter-spacing="1">▸</text>
+
+  <g class="hx-email-reveal">
+    <text class="mono" x="872" y="448" font-size="11" fill="#ffcc00"
+          letter-spacing="0.5" textLength="220.1" lengthAdjust="spacingAndGlyphs">ahmadzamanhuri.jakfar@gmail.com</text>
+  </g>
+
+  <g class="hx-cursor">
+    <rect class="hx-cursor-blink" x="872" y="438" width="8" height="12" fill="#ffcc00"/>
+  </g>
+
+  <line x1="836" y1="468" x2="1216" y2="468" stroke="#1a1a2a" stroke-width="1" stroke-dasharray="2 4"/>
+
+  <text class="mono" x="836" y="494" font-size="9.5" fill="#4a4a5a" letter-spacing="1.5">SESSION: ACTIVE</text>
+  <text class="mono" x="1216" y="494" text-anchor="end" font-size="9.5" fill="#4a4a5a" letter-spacing="1.5">0x00FF</text>
+
+  <path d="M 820 112 L 820 92 L 840 92" fill="none" stroke="#00fff0" stroke-width="1.5" opacity="0.6"/>
+  <path d="M 1212 92 L 1232 92 L 1232 112" fill="none" stroke="#00fff0" stroke-width="1.5" opacity="0.6"/>
+  <path d="M 1232 512 L 1232 532 L 1212 532" fill="none" stroke="#00fff0" stroke-width="1.5" opacity="0.6"/>
+  <path d="M 840 532 L 820 532 L 820 512" fill="none" stroke="#00fff0" stroke-width="1.5" opacity="0.6"/>
+
+  <line x1="48" y1="530" x2="1232" y2="530" stroke="#1a1a2a" stroke-width="1"/>
+
+  <text class="mono hx-data" x="48" y="556" font-size="10" fill="#4a4a5a" letter-spacing="3">0x00 · 0x1F · 0x3A · 0x5C · 0x7E · 0xA1 · 0xC3 · 0xE5 · 0xFF · 0x7F · 0x3A · 0x1F · 0x00</text>
+  <text class="mono" x="1232" y="556" text-anchor="end" font-size="10" fill="#4a4a5a" letter-spacing="2">TRANSMISSION.COMPLETE</text>
+
+  <line x1="48" y1="576" x2="88" y2="576" stroke="#ffcc00" stroke-width="1.5" opacity="0.7"/>
+  <line x1="98" y1="576" x2="118" y2="576" stroke="#ffcc00" stroke-width="1.5" opacity="0.4"/>
+  <line x1="128" y1="576" x2="138" y2="576" stroke="#ffcc00" stroke-width="1.5" opacity="0.2"/>
+</svg>

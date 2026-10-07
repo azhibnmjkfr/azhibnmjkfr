@@ -1,0 +1,313 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720" role="img" aria-label="RIFT.ARCHIVE — projects">
+  <defs>
+    <radialGradient id="rfBgGrad" cx="50%" cy="50%" r="80%">
+      <stop offset="0%" stop-color="#0a0a12"/>
+      <stop offset="100%" stop-color="#000000"/>
+    </radialGradient>
+
+    <linearGradient id="rfGoldGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffcc00"/>
+      <stop offset="50%" stop-color="#ffe680"/>
+      <stop offset="100%" stop-color="#ffcc00"/>
+    </linearGradient>
+
+    <linearGradient id="rfRiftCyan" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#00fff0" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#00fff0" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#00fff0" stop-opacity="0"/>
+    </linearGradient>
+
+    <linearGradient id="rfRiftMagenta" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ff00aa" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#ff00aa" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#ff00aa" stop-opacity="0"/>
+    </linearGradient>
+
+    <linearGradient id="rfRiftGold" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffcc00" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#ffcc00" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#ffcc00" stop-opacity="0"/>
+    </linearGradient>
+
+    <filter id="rfSoftGlow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="12" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="rfNoise">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="4" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.06"/>
+      </feComponentTransfer>
+    </filter>
+
+    <style>
+      .mono { font-family: 'SF Mono', 'Fira Code', 'Consolas', 'Courier New', monospace; }
+
+      @keyframes rfRiftPulse {
+        0%, 100% { opacity: 0.7; }
+        50% { opacity: 1; }
+      }
+
+      @keyframes rfRiftGlow {
+        0%, 100% { opacity: 0.35; }
+        50% { opacity: 0.7; }
+      }
+
+      @keyframes rfLed {
+        0%, 49%, 100% { opacity: 1; }
+        50%, 99% { opacity: 0.15; }
+      }
+
+      @keyframes rfBlink {
+        0%, 49% { opacity: 1; }
+        50%, 100% { opacity: 0; }
+      }
+
+      @keyframes rfData {
+        0%, 90%, 100% { opacity: 0.7; }
+        92% { opacity: 0.2; }
+        94% { opacity: 1; }
+        96% { opacity: 0.4; }
+      }
+
+      @keyframes rfCardGlitch {
+        0%, 100% { transform: translate(0, 0); filter: none; }
+        88% { transform: translate(0, 0); filter: none; }
+        89% { transform: translate(-2px, 1px); filter: hue-rotate(-15deg); }
+        90% { transform: translate(2px, -1px); filter: hue-rotate(15deg); }
+        91% { transform: translate(-1px, 0); filter: none; }
+        92% { transform: translate(1px, 1px); filter: hue-rotate(-10deg); }
+        93% { transform: translate(0, 0); filter: none; }
+        94% { opacity: 0.85; }
+        95% { opacity: 1; }
+      }
+
+      @keyframes rfTextGlitchCyan {
+        0%, 100% { transform: translateX(0); opacity: 0; }
+        88% { transform: translateX(0); opacity: 0; }
+        89% { transform: translateX(-2px); opacity: 0.8; }
+        91% { transform: translateX(2px); opacity: 0.8; }
+        93% { transform: translateX(0); opacity: 0; }
+      }
+
+      @keyframes rfTextGlitchMagenta {
+        0%, 100% { transform: translateX(0); opacity: 0; }
+        88% { transform: translateX(0); opacity: 0; }
+        89% { transform: translateX(2px); opacity: 0.8; }
+        91% { transform: translateX(-2px); opacity: 0.8; }
+        93% { transform: translateX(0); opacity: 0; }
+      }
+
+      @keyframes rfSlice {
+        0%, 100% { transform: translateX(0); opacity: 0; }
+        87% { transform: translateX(0); opacity: 0; }
+        88% { transform: translateX(-8px); opacity: 1; }
+        89% { transform: translateX(6px); opacity: 1; }
+        90% { transform: translateX(-3px); opacity: 0.6; }
+        91% { transform: translateX(0); opacity: 0; }
+      }
+
+      .rf-rift { animation: rfRiftPulse 3s ease-in-out infinite; }
+      .rf-rift-fast { animation: rfRiftPulse 2.2s ease-in-out infinite; }
+      .rf-rift-glow { animation: rfRiftGlow 3.5s ease-in-out infinite; }
+      .rf-led { animation: rfLed 1.2s step-end infinite; }
+      .rf-blink { animation: rfBlink 1s step-end infinite; }
+      .rf-data { animation: rfData 2.5s ease-in-out infinite; }
+
+      .rf-card-1 { animation: rfCardGlitch 5s ease-in-out infinite; }
+      .rf-card-2 { animation: rfCardGlitch 5.5s ease-in-out infinite 0.8s; }
+      .rf-card-3 { animation: rfCardGlitch 6s ease-in-out infinite 1.6s; }
+      .rf-card-4 { animation: rfCardGlitch 5.2s ease-in-out infinite 2.4s; }
+      .rf-card-5 { animation: rfCardGlitch 5.8s ease-in-out infinite 3.2s; }
+      .rf-card-6 { animation: rfCardGlitch 5.4s ease-in-out infinite 4s; }
+
+      .rf-t-cyan-1 { animation: rfTextGlitchCyan 5s ease-in-out infinite; }
+      .rf-t-mag-1 { animation: rfTextGlitchMagenta 5s ease-in-out infinite; }
+      .rf-t-cyan-2 { animation: rfTextGlitchCyan 5.5s ease-in-out infinite 0.8s; }
+      .rf-t-mag-2 { animation: rfTextGlitchMagenta 5.5s ease-in-out infinite 0.8s; }
+      .rf-t-cyan-3 { animation: rfTextGlitchCyan 6s ease-in-out infinite 1.6s; }
+      .rf-t-mag-3 { animation: rfTextGlitchMagenta 6s ease-in-out infinite 1.6s; }
+      .rf-t-cyan-4 { animation: rfTextGlitchCyan 5.2s ease-in-out infinite 2.4s; }
+      .rf-t-mag-4 { animation: rfTextGlitchMagenta 5.2s ease-in-out infinite 2.4s; }
+      .rf-t-cyan-5 { animation: rfTextGlitchCyan 5.8s ease-in-out infinite 3.2s; }
+      .rf-t-mag-5 { animation: rfTextGlitchMagenta 5.8s ease-in-out infinite 3.2s; }
+      .rf-t-cyan-6 { animation: rfTextGlitchCyan 5.4s ease-in-out infinite 4s; }
+      .rf-t-mag-6 { animation: rfTextGlitchMagenta 5.4s ease-in-out infinite 4s; }
+
+      .rf-slice-1 { animation: rfSlice 5s ease-in-out infinite; }
+      .rf-slice-2 { animation: rfSlice 5.5s ease-in-out infinite 0.8s; }
+      .rf-slice-3 { animation: rfSlice 6s ease-in-out infinite 1.6s; }
+      .rf-slice-4 { animation: rfSlice 5.2s ease-in-out infinite 2.4s; }
+      .rf-slice-5 { animation: rfSlice 5.8s ease-in-out infinite 3.2s; }
+      .rf-slice-6 { animation: rfSlice 5.4s ease-in-out infinite 4s; }
+    </style>
+  </defs>
+
+  <rect width="1280" height="720" fill="url(#rfBgGrad)"/>
+  <rect width="1280" height="720" filter="url(#rfNoise)" opacity="0.5"/>
+
+  <ellipse cx="320" cy="280" rx="340" ry="200" fill="#00fff0" opacity="0.06" filter="url(#rfSoftGlow)"/>
+  <ellipse cx="960" cy="420" rx="340" ry="220" fill="#ff00aa" opacity="0.05" filter="url(#rfSoftGlow)"/>
+  <ellipse cx="640" cy="600" rx="280" ry="140" fill="#ffcc00" opacity="0.04" filter="url(#rfSoftGlow)"/>
+
+  <rect class="rf-led" x="48" y="46" width="6" height="6" fill="#00fff0"/>
+  <text class="mono" x="66" y="54" font-size="11" fill="#00fff0" font-weight="600" letter-spacing="3">/// RIFT.ARCHIVE</text>
+  <text class="mono rf-data" x="1232" y="54" text-anchor="end" font-size="10" fill="#4a4a5a" letter-spacing="2">PORTALS: 06 · ACTIVE</text>
+
+  <line x1="48" y1="70" x2="1232" y2="70" stroke="#1a1a2a" stroke-width="1"/>
+  <line x1="48" y1="71" x2="348" y2="71" stroke="url(#rfGoldGrad)" stroke-width="1" opacity="0.6"/>
+
+  <text class="mono" x="48" y="126" font-size="38" fill="#ffffff" font-weight="700" letter-spacing="-0.5">PROJECT.RIFTS</text>
+  <text class="mono" x="330" y="126" font-size="38" fill="#ff00aa" font-weight="700" letter-spacing="-0.5" opacity="0.4">◈</text>
+
+  <text class="mono" x="48" y="154" font-size="11" fill="#4a4a5a" letter-spacing="3">DIMENSIONAL.ARCHIVE — 06 ENTRIES</text>
+  <text class="mono rf-blink" x="1232" y="154" text-anchor="end" font-size="11" fill="#00fff0" letter-spacing="2">▸ ACTIVE</text>
+
+  <line x1="48" y1="174" x2="1232" y2="174" stroke="#1a1a2a" stroke-width="1"/>
+
+  <!-- RIFT 01 — LUMEN -->
+  <g class="rf-card-1">
+    <rect x="48" y="200" width="588" height="164" fill="#0a0a12" stroke="#1a1a2a" stroke-width="1"/>
+    <text class="mono" x="72" y="234" font-size="10" fill="#4a4a5a" letter-spacing="2">RIFT.01 — PWA</text>
+    <text class="mono rf-data" x="200" y="234" font-size="10" fill="#00fff0" letter-spacing="1">● STABLE</text>
+    <text class="mono rf-t-cyan-1" x="72" y="272" font-size="26" fill="#00fff0" font-weight="700" letter-spacing="-0.3" opacity="0">Lumen</text>
+    <text class="mono rf-t-mag-1" x="72" y="272" font-size="26" fill="#ff00aa" font-weight="700" letter-spacing="-0.3" opacity="0">Lumen</text>
+    <text class="mono" x="72" y="272" font-size="26" fill="#ffffff" font-weight="700" letter-spacing="-0.3">Lumen</text>
+    <text class="mono" x="72" y="296" font-size="11" fill="#4a4a5a" letter-spacing="0.5">Offline notes · markdown · wiki-link ·</text>
+    <text class="mono" x="72" y="312" font-size="11" fill="#4a4a5a" letter-spacing="0.5">voice-to-text · camera scan · pomodoro.</text>
+    <a href="https://lumennote.pages.dev/" target="_blank">
+      <text class="mono" x="72" y="336" font-size="11" fill="#00fff0" letter-spacing="1">▸ lumennote.pages.dev</text>
+      <text class="mono rf-blink" x="212" y="336" font-size="11" fill="#00fff0">▸</text>
+    </a>
+    <rect x="440" y="200" width="196" height="164" fill="#000000" opacity="0.5"/>
+    <line x1="440" y1="200" x2="440" y2="364" stroke="#1a1a2a" stroke-width="1"/>
+    <rect class="rf-slice-1" x="440" y="280" width="196" height="3" fill="#00fff0" opacity="0"/>
+    <rect class="rf-rift-glow" x="520" y="216" width="36" height="132" fill="#00fff0" opacity="0.4" filter="url(#rfSoftGlow)"/>
+    <rect class="rf-rift" x="536" y="216" width="4" height="132" fill="url(#rfRiftCyan)"/>
+    <text class="mono" x="560" y="234" font-size="9" fill="#00fff0" letter-spacing="1.5">OPEN</text>
+    <text class="mono" x="560" y="290" font-size="9" fill="#4a4a5a" letter-spacing="1.5">0x01</text>
+    <text class="mono" x="560" y="344" font-size="9" fill="#4a4a5a" letter-spacing="1.5">→</text>
+  </g>
+
+  <!-- RIFT 02 — ENGWARD LAB -->
+  <g class="rf-card-2">
+    <rect x="644" y="200" width="588" height="164" fill="#0a0a12" stroke="#1a1a2a" stroke-width="1"/>
+    <text class="mono" x="668" y="234" font-size="10" fill="#4a4a5a" letter-spacing="2">RIFT.02 — EDTECH</text>
+    <text class="mono rf-data" x="820" y="234" font-size="10" fill="#ff00aa" letter-spacing="1">● STABLE</text>
+    <text class="mono rf-t-cyan-2" x="668" y="272" font-size="26" fill="#00fff0" font-weight="700" letter-spacing="-0.3" opacity="0">Engward Lab</text>
+    <text class="mono rf-t-mag-2" x="668" y="272" font-size="26" fill="#ff00aa" font-weight="700" letter-spacing="-0.3" opacity="0">Engward Lab</text>
+    <text class="mono" x="668" y="272" font-size="26" fill="#ffffff" font-weight="700" letter-spacing="-0.3">Engward Lab</text>
+    <text class="mono" x="668" y="296" font-size="11" fill="#4a4a5a" letter-spacing="0.5">Interactive English grammar practice</text>
+    <text class="mono" x="668" y="312" font-size="11" fill="#4a4a5a" letter-spacing="0.5">for Grade 4–8. Chapter slides, quizzes.</text>
+    <a href="https://azhibnmjkfr.github.io/engwardlab/" target="_blank">
+      <text class="mono" x="668" y="336" font-size="11" fill="#ff00aa" letter-spacing="1">▸ azhibnmjkfr.github.io/engwardlab</text>
+      <text class="mono rf-blink" x="944" y="336" font-size="11" fill="#ff00aa">▸</text>
+    </a>
+    <rect x="1036" y="200" width="196" height="164" fill="#000000" opacity="0.5"/>
+    <line x1="1036" y1="200" x2="1036" y2="364" stroke="#1a1a2a" stroke-width="1"/>
+    <rect class="rf-slice-2" x="1036" y="280" width="196" height="3" fill="#ff00aa" opacity="0"/>
+    <rect class="rf-rift-glow" x="1116" y="216" width="36" height="132" fill="#ff00aa" opacity="0.4" filter="url(#rfSoftGlow)" style="animation-delay: 0.5s"/>
+    <rect class="rf-rift" x="1132" y="216" width="4" height="132" fill="url(#rfRiftMagenta)" style="animation-delay: 0.5s"/>
+    <text class="mono" x="1156" y="234" font-size="9" fill="#ff00aa" letter-spacing="1.5">OPEN</text>
+    <text class="mono" x="1156" y="290" font-size="9" fill="#4a4a5a" letter-spacing="1.5">0x02</text>
+    <text class="mono" x="1156" y="344" font-size="9" fill="#4a4a5a" letter-spacing="1.5">→</text>
+  </g>
+
+  <!-- RIFT 03 — TENSES12 -->
+  <g class="rf-card-3">
+    <rect x="48" y="384" width="588" height="164" fill="#0a0a12" stroke="#1a1a2a" stroke-width="1"/>
+    <text class="mono" x="72" y="418" font-size="10" fill="#4a4a5a" letter-spacing="2">RIFT.03 — REFERENCE</text>
+    <text class="mono rf-data" x="220" y="418" font-size="10" fill="#ffcc00" letter-spacing="1">● STABLE</text>
+    <text class="mono rf-t-cyan-3" x="72" y="456" font-size="26" fill="#00fff0" font-weight="700" letter-spacing="-0.3" opacity="0">Tenses12</text>
+    <text class="mono rf-t-mag-3" x="72" y="456" font-size="26" fill="#ff00aa" font-weight="700" letter-spacing="-0.3" opacity="0">Tenses12</text>
+    <text class="mono" x="72" y="456" font-size="26" fill="#ffffff" font-weight="700" letter-spacing="-0.3">Tenses12</text>
+    <text class="mono" x="72" y="480" font-size="11" fill="#4a4a5a" letter-spacing="0.5">100% offline English grammar reference.</text>
+    <text class="mono" x="72" y="496" font-size="11" fill="#4a4a5a" letter-spacing="0.5">12 tenses · modals · conditionals · passive.</text>
+    <a href="https://tenses12.pages.dev/" target="_blank">
+      <text class="mono" x="72" y="520" font-size="11" fill="#ffcc00" letter-spacing="1">▸ tenses12.pages.dev</text>
+      <text class="mono rf-blink" x="200" y="520" font-size="11" fill="#ffcc00">▸</text>
+    </a>
+    <rect x="440" y="384" width="196" height="164" fill="#000000" opacity="0.5"/>
+    <line x1="440" y1="384" x2="440" y2="548" stroke="#1a1a2a" stroke-width="1"/>
+    <rect class="rf-slice-3" x="440" y="464" width="196" height="3" fill="#ffcc00" opacity="0"/>
+    <rect class="rf-rift-glow" x="520" y="400" width="36" height="132" fill="#ffcc00" opacity="0.4" filter="url(#rfSoftGlow)" style="animation-delay: 1s"/>
+    <rect class="rf-rift-fast" x="536" y="400" width="4" height="132" fill="url(#rfRiftGold)"/>
+    <text class="mono" x="560" y="418" font-size="9" fill="#ffcc00" letter-spacing="1.5">OPEN</text>
+    <text class="mono" x="560" y="474" font-size="9" fill="#4a4a5a" letter-spacing="1.5">0x03</text>
+    <text class="mono" x="560" y="528" font-size="9" fill="#4a4a5a" letter-spacing="1.5">→</text>
+  </g>
+
+  <!-- RIFT 04 — AZHAI GENERATOR -->
+  <g class="rf-card-4">
+    <rect x="644" y="384" width="588" height="164" fill="#0a0a12" stroke="#1a1a2a" stroke-width="1"/>
+    <text class="mono" x="668" y="418" font-size="10" fill="#4a4a5a" letter-spacing="2">RIFT.04 — AI</text>
+    <text class="mono rf-data" x="808" y="418" font-size="10" fill="#00fff0" letter-spacing="1">● STABLE</text>
+    <text class="mono rf-t-cyan-4" x="668" y="456" font-size="26" fill="#00fff0" font-weight="700" letter-spacing="-0.3" opacity="0">Azhai Generator</text>
+    <text class="mono rf-t-mag-4" x="668" y="456" font-size="26" fill="#ff00aa" font-weight="700" letter-spacing="-0.3" opacity="0">Azhai Generator</text>
+    <text class="mono" x="668" y="456" font-size="26" fill="#ffffff" font-weight="700" letter-spacing="-0.3">Azhai Generator</text>
+    <text class="mono" x="668" y="480" font-size="11" fill="#4a4a5a" letter-spacing="0.5">Text-to-image AI generator. Write prompt,</text>
+    <text class="mono" x="668" y="496" font-size="11" fill="#4a4a5a" letter-spacing="0.5">pick style — free, no login, no watermark.</text>
+    <a href="https://azhai-generator.pages.dev/" target="_blank">
+      <text class="mono" x="668" y="520" font-size="11" fill="#00fff0" letter-spacing="1">▸ azhai-generator.pages.dev</text>
+      <text class="mono rf-blink" x="908" y="520" font-size="11" fill="#00fff0">▸</text>
+    </a>
+    <rect x="1036" y="384" width="196" height="164" fill="#000000" opacity="0.5"/>
+    <line x1="1036" y1="384" x2="1036" y2="548" stroke="#1a1a2a" stroke-width="1"/>
+    <rect class="rf-slice-4" x="1036" y="464" width="196" height="3" fill="#00fff0" opacity="0"/>
+    <rect class="rf-rift-glow" x="1116" y="400" width="36" height="132" fill="#00fff0" opacity="0.4" filter="url(#rfSoftGlow)" style="animation-delay: 1.4s"/>
+    <rect class="rf-rift" x="1132" y="400" width="4" height="132" fill="url(#rfRiftCyan)" style="animation-delay: 0.8s"/>
+    <text class="mono" x="1156" y="418" font-size="9" fill="#00fff0" letter-spacing="1.5">OPEN</text>
+    <text class="mono" x="1156" y="474" font-size="9" fill="#4a4a5a" letter-spacing="1.5">0x04</text>
+    <text class="mono" x="1156" y="528" font-size="9" fill="#4a4a5a" letter-spacing="1.5">→</text>
+  </g>
+
+  <!-- RIFT 05 — XML PROMPT GENERATOR -->
+  <g class="rf-card-5">
+    <rect x="48" y="568" width="588" height="120" fill="#0a0a12" stroke="#1a1a2a" stroke-width="1"/>
+    <text class="mono" x="72" y="598" font-size="10" fill="#4a4a5a" letter-spacing="2">RIFT.05 — TOOL</text>
+    <text class="mono rf-data" x="196" y="598" font-size="10" fill="#ff00aa" letter-spacing="1">● STABLE</text>
+    <text class="mono rf-t-cyan-5" x="72" y="628" font-size="20" fill="#00fff0" font-weight="700" letter-spacing="-0.3" opacity="0">XML Prompt Generator</text>
+    <text class="mono rf-t-mag-5" x="72" y="628" font-size="20" fill="#ff00aa" font-weight="700" letter-spacing="-0.3" opacity="0">XML Prompt Generator</text>
+    <text class="mono" x="72" y="628" font-size="20" fill="#ffffff" font-weight="700" letter-spacing="-0.3">XML Prompt Generator</text>
+    <text class="mono" x="72" y="650" font-size="11" fill="#4a4a5a" letter-spacing="0.5">7 structured categories — concept, style, light, color, framing, detail, tech.</text>
+    <a href="https://azhibnmjkfr.github.io/azhai-promptstudio/" target="_blank">
+      <text class="mono" x="72" y="672" font-size="11" fill="#ff00aa" letter-spacing="1">▸ azhibnmjkfr.github.io/azhai-promptstudio</text>
+    </a>
+    <rect x="440" y="568" width="196" height="120" fill="#000000" opacity="0.5"/>
+    <line x1="440" y1="568" x2="440" y2="688" stroke="#1a1a2a" stroke-width="1"/>
+    <rect class="rf-slice-5" x="440" y="628" width="196" height="3" fill="#ff00aa" opacity="0"/>
+    <rect class="rf-rift-glow" x="520" y="580" width="36" height="96" fill="#ff00aa" opacity="0.4" filter="url(#rfSoftGlow)" style="animation-delay: 1.8s"/>
+    <rect class="rf-rift-fast" x="536" y="580" width="4" height="96" fill="url(#rfRiftMagenta)" style="animation-delay: 1.6s"/>
+    <text class="mono" x="560" y="598" font-size="9" fill="#ff00aa" letter-spacing="1.5">OPEN</text>
+    <text class="mono" x="560" y="636" font-size="9" fill="#4a4a5a" letter-spacing="1.5">0x05</text>
+    <text class="mono" x="560" y="670" font-size="9" fill="#4a4a5a" letter-spacing="1.5">→</text>
+  </g>
+
+  <!-- RIFT 06 — MY CV -->
+  <g class="rf-card-6">
+    <rect x="644" y="568" width="588" height="120" fill="#0a0a12" stroke="#1a1a2a" stroke-width="1"/>
+    <text class="mono" x="668" y="598" font-size="10" fill="#4a4a5a" letter-spacing="2">RIFT.06 — PERSONAL</text>
+    <text class="mono rf-data" x="832" y="598" font-size="10" fill="#ffcc00" letter-spacing="1">● STABLE</text>
+    <text class="mono rf-t-cyan-6" x="668" y="628" font-size="20" fill="#00fff0" font-weight="700" letter-spacing="-0.3" opacity="0">My CV</text>
+    <text class="mono rf-t-mag-6" x="668" y="628" font-size="20" fill="#ff00aa" font-weight="700" letter-spacing="-0.3" opacity="0">My CV</text>
+    <text class="mono" x="668" y="628" font-size="20" fill="#ffffff" font-weight="700" letter-spacing="-0.3">My CV</text>
+    <text class="mono" x="668" y="650" font-size="11" fill="#4a4a5a" letter-spacing="0.5">Interactive CV — profile, teaching, skills &amp; projects.</text>
+    <a href="https://azhibnmjkfr.pages.dev/" target="_blank">
+      <text class="mono" x="668" y="672" font-size="11" fill="#ffcc00" letter-spacing="1">▸ azhibnmjkfr.pages.dev</text>
+    </a>
+    <rect x="1036" y="568" width="196" height="120" fill="#000000" opacity="0.5"/>
+    <line x1="1036" y1="568" x2="1036" y2="688" stroke="#1a1a2a" stroke-width="1"/>
+    <rect class="rf-slice-6" x="1036" y="628" width="196" height="3" fill="#ffcc00" opacity="0"/>
+    <rect class="rf-rift-glow" x="1116" y="580" width="36" height="96" fill="#ffcc00" opacity="0.4" filter="url(#rfSoftGlow)" style="animation-delay: 2.2s"/>
+    <rect class="rf-rift" x="1132" y="580" width="4" height="96" fill="url(#rfRiftGold)" style="animation-delay: 2s"/>
+    <text class="mono" x="1156" y="598" font-size="9" fill="#ffcc00" letter-spacing="1.5">OPEN</text>
+    <text class="mono" x="1156" y="636" font-size="9" fill="#4a4a5a" letter-spacing="1.5">0x06</text>
+    <text class="mono" x="1156" y="670" font-size="9" fill="#4a4a5a" letter-spacing="1.5">→</text>
+  </g>
+
+</svg>
